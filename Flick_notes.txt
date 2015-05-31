@@ -1,0 +1,36 @@
+Pages:
+-Home
+-Sign up / Log in
+-User dashboard
+-Movie Index (with filter for genre, score(populatiry) etc)
+-Movie Show (with twitter buzz-feed)
+-Group Show
+-Group Index
+-User/movie index
+-User/Group index
+-User/movie index?
+
+=============================================================================
+
+Core Features
+- User
+- Rate Movies
+- Recommendations
+- Join/Belong to Groups
+- Aggregate Data for Groups
+- Movie Buzz - Twitter Feed
+- Movie javascript filters
+- Random Pick
+- Your Movies
+- Your Groups
+- Your Friends
+- Twillio to invite friends to watch with you???
+
+==============================================================================
+
+Cool Add-ons
+
+- Phaser sounds
+- Javascript Animations
+- JQuery CSS style Changes
+- Ajax calls to OMDb
