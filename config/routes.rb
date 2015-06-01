@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     resources :ratings, only: [:edit, :update]
   end
 
-  get "login", to: "sessions#new"
 
   get "auth/:provider/callback", to: "sessions#create"
+
+  get "login",      to: "sessions#new"
+  delete "/logout", to: "sessions#destroy"
 end

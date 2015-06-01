@@ -1,12 +1,12 @@
 <div class="container">
-  <h1>Kyle's Dashboard</h1>
+  <h1><%= current_user.username %> Dashboard</h1>
   <div class="row">
-  <%= link_to "My Flicks", user_path(1), class: "normal_btn"%>
-  <%= link_to "My Groups", user_path(1), class: "normal_btn"%>
-  <%= link_to "View All Flicks", user_path(1), class: "normal_btn"%>
-  <%= link_to "View All Groups", user_path(1), class: "normal_btn"%>
-  <%= link_to "Pick For Me", user_path(1), class: "normal_btn"%>
-  <%= link_to "Rate More Flicks", user_path(1), class: "normal_btn"%>
+  <%= link_to "My Flicks", user_path(current_user), class: "normal_btn"%>
+  <%= link_to "My Groups", user_path(current_user), class: "normal_btn"%>
+  <%= link_to "View All Flicks", user_path(current_user), class: "normal_btn"%>
+  <%= link_to "View All Groups", user_path(current_user), class: "normal_btn"%>
+  <% link_to "Pick For #{current_user.username}", user_path(current_user), class: "normal_btn"-%>
+  <%= link_to "Rate More Flicks", user_path(current_user), class: "normal_btn"%>
   </div>
   <div class="row">
     <div class="col-lg-6 col-lg-offset-3">

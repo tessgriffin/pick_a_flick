@@ -9,6 +9,9 @@
 <body>
   <%= render :partial => 'layouts/nav' %>
   <div class="footer_height">
+    <% flash.each do |type, message| %>
+    <%= content_tag :div, message, class: type %>
+    <% end %>
     <%= yield %>
   </div>
   <div id="footer">
