@@ -1,0 +1,141 @@
+/*-------------------------------
+Main Styles
+------------------------------- */
+
+body {
+  background-color: #CACACA !important;
+  font-size: 16px !important;
+}
+
+
+hr {
+  border-top: 2px solid gray !important;
+  margin-top: 100px !important;
+  margin-bottom: 50px !important;
+}
+
+h1 {
+  font-family: "Roddenberry" !important;
+  font-size: 2em !important;
+}
+
+h2{
+  font-family: "Roddenberry" !important;
+  font-size: 2.5em !important;
+}
+
+@font-face {
+    font-family: "Roddenberry";
+    src: url('Roddenberry.ttf') format("truetype");
+}
+
+/*-------------------------------
+Nav Bar
+------------------------------- */
+
+.navbar {
+  margin-bottom: 0px !important;
+}
+
+/*-------------------------------
+Footer
+------------------------------- */
+
+#footer {
+  background-color: #101010;
+  opacity: .8;
+  color: white;
+  z-index: 10000;
+  margin-top: 20px;
+  height: 50px;
+}
+
+.footer_text {
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer_height {
+  min-height: 85vh;
+}
+
+/*-------------------------------
+Home Page
+------------------------------- */
+
+.jumbotron{
+  background: image-url("space_bg.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 350px;
+  position: relative;
+/*  opacity: .7;*/
+}
+
+.jumbotron h1{
+  position: absolute;
+  right: 50px;
+  bottom: 40%;
+  width: 40%;
+  font-size: 3em !important;
+  color: white !important;
+}
+
+.movie_box{
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  width: 55%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-color: #EEE8E8;
+  margin-top: 20px !important;
+}
+
+.movie_box_single{
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: #EEE8E8;
+  margin-right: 10px !important;
+  padding: 20px;
+}
+
+.movie_box_single img{
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.group_box {
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: #EEE8E8;
+  margin-right: 10px !important;
+  padding: 20px;
+  height: 300px;
+}
+
+.group_box img {
+  border-radius: 50%;
+  max-height: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.normal_btn {
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 20px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #8364bd;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.normal_btn:hover {
+  background: #5d4191;
+  text-decoration: none;
+  color: #fff !important;
+}
+

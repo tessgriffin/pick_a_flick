@@ -16,4 +16,5 @@ Rails.application.routes.draw do
     resources :ratings, only: [:edit, :update]
   end
 
+  get "login", to: "sessions#new"
 end

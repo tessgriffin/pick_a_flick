@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>Kyle's Dashboard</h1>
+  <div class="row">
+  <%= link_to "My Flicks", user_path(1), class: "normal_btn"%>
+  <%= link_to "My Groups", user_path(1), class: "normal_btn"%>
+  <%= link_to "View All Flicks", user_path(1), class: "normal_btn"%>
+  <%= link_to "View All Groups", user_path(1), class: "normal_btn"%>
+  <%= link_to "Pick For Me", user_path(1), class: "normal_btn"%>
+  <%= link_to "Rate More Flicks", user_path(1), class: "normal_btn"%>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+      <h2>Top Recommendation in Sci-Fi</h2>
+  </div>
+  </div>
+  <div class="row movie_box">
+  <div class="col-lg-2">
+    <%= image_tag "terminator2.jpg" %>
+    </div>
+    <div class="col-lg-5 col-lg-offset-5">
+      <h3>Terminator 2: Judgment Day</h3>
+      <p>"A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her young son, John Connor, from a more advanced cyborg, made out of liquid metal."</p>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+      <h2>Your Groups</h2>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 col-lg-offset-1 movie_box_single">
+      <%= image_tag "2001.jpg" %><h4>Space Cadets</h4>
+    </div>
+    <div class="col-lg-3 movie_box_single">
+      <%= image_tag "back_to_the_future.jpg" %><h4>Futurists</h4>
+    </div>
+    <div class="col-lg-3 movie_box_single">
+      <%= image_tag "district9.jpg" %><h4>Aliens</h4>
+    </div>
+  </div>
+</div>
