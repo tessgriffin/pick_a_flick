@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: "home#home"
 
+  get "/search", to: "home#search"
+
   resources :users, except: [:index]
 
   resources :groups
