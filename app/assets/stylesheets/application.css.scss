@@ -13,5 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import "materialize/components/color";
+$primary-color: color("blue-grey", "lighten-2") !default;
+@import "materialize";
