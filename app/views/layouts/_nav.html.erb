@@ -21,8 +21,12 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Log In", login_path %></li>
+        <% if current_user %>
+        <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
         <li><%= link_to "User Dashboard", user_path(1) %></li>
+        <% else %>
+        <li><%= link_to "Log In", login_path %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
