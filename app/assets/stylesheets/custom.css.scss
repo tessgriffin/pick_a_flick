@@ -3,8 +3,8 @@ Main Styles
 ------------------------------- */
 
 body {
-  background-color: #CACACA !important;
-  font-size: 16px !important;
+/*  background-color: #CACACA !important;
+  font-size: 16px !important;*/
 }
 
 
@@ -14,7 +14,7 @@ hr {
   margin-bottom: 50px !important;
 }
 
-h1 {
+/*h1 {
   font-family: "Roddenberry" !important;
   font-size: 2em !important;
 }
@@ -22,7 +22,7 @@ h1 {
 h2{
   font-family: "Roddenberry" !important;
   font-size: 2.5em !important;
-}
+}*/
 
 @font-face {
     font-family: "Roddenberry";
@@ -40,6 +40,16 @@ Nav Bar
 /*-------------------------------
 Footer
 ------------------------------- */
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
 
 #footer {
   background-color: #101010;
@@ -66,19 +76,25 @@ Home Page
 .jumbotron{
   background: image-url("space_bg.png") no-repeat center center fixed;
   background-size: cover;
-  height: 350px;
+  height: 400px;
   position: relative;
+  padding-top: 5%;
 /*  opacity: .7;*/
 }
 
 .jumbotron h1{
+  margin-top: 0px !important;
+}
+
+/*.jumbotron h1{
   position: absolute;
   right: 50px;
-  bottom: 40%;
+  bottom: 15%;
   width: 40%;
+  font-style: italic;
   font-size: 3em !important;
   color: white !important;
-}
+}*/
 
 .movie_box{
   border: 2px solid black;
@@ -89,6 +105,12 @@ Home Page
   margin-right: auto !important;
   background-color: #EEE8E8;
   margin-top: 20px !important;
+}
+
+.movie_row {
+  background-color: #cfd8dc;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .movie_box_single{

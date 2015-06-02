@@ -1,41 +1,44 @@
 <div class="container">
-  <h1>Kyle's Dashboard</h1>
   <div class="row">
-  <%= link_to "My Flicks", user_path(1), class: "normal_btn"%>
-  <%= link_to "My Groups", user_path(1), class: "normal_btn"%>
-  <%= link_to "View All Flicks", user_path(1), class: "normal_btn"%>
-  <%= link_to "View All Groups", user_path(1), class: "normal_btn"%>
-  <%= link_to "Pick For Me", user_path(1), class: "normal_btn"%>
-  <%= link_to "Rate More Flicks", user_path(1), class: "normal_btn"%>
+    <div class="col s6 offset-s3">
+      <h4><%= current_user.username %> Dashboard</h4>
+    </div>
   </div>
   <div class="row">
-    <div class="col-lg-6 col-lg-offset-3">
-      <h2>Top Recommendation in Sci-Fi</h2>
+  <div class=" col s8 offset-s2">
+  <%= link_to "My Groups", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"%>
+  <%= link_to "View All Groups", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"%>
+  <% link_to "Pick For #{current_user.username}", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"-%>
+  <%= link_to "Rate More Flicks", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"%>
+  </div>
+  <div class="row">
+    <div class="col s6 offset-s3">
+      <h4>Top Recommendation in Sci-Fi</h4>
   </div>
   </div>
-  <div class="row movie_box">
-  <div class="col-lg-2">
+  <div class="row">
+  <div class="col l2">
     <%= image_tag "terminator2.jpg" %>
     </div>
-    <div class="col-lg-5 col-lg-offset-5">
+    <div class="col l8 offset-l2">
       <h3>Terminator 2: Judgment Day</h3>
       <p>"A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her young son, John Connor, from a more advanced cyborg, made out of liquid metal."</p>
     </div>
   </div>
   <hr>
   <div class="row">
-    <div class="col-lg-6 col-lg-offset-3">
-      <h2>Your Groups</h2>
+    <div class="col s6 offset-s3">
+      <h4>Your Groups</h4>
   </div>
   </div>
   <div class="row">
-    <div class="col-lg-3 col-lg-offset-1 movie_box_single">
-      <%= image_tag "2001.jpg" %><h4>Space Cadets</h4>
+    <div class="col l4">
+      <%= image_tag "2001.jpg"%><h4>Space Cadets</h4>
     </div>
-    <div class="col-lg-3 movie_box_single">
+    <div class="col l4">
       <%= image_tag "back_to_the_future.jpg" %><h4>Futurists</h4>
     </div>
-    <div class="col-lg-3 movie_box_single">
+    <div class="col l4">
       <%= image_tag "district9.jpg" %><h4>Aliens</h4>
     </div>
   </div>

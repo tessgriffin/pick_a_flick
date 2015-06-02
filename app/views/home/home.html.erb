@@ -1,34 +1,62 @@
 <div class="jumbotron">
-  <h1>Bold Movies Recommended for You and Your Friends</h1>
+  <h1 class="header center white-text">Movie Night Indecision?</h1>
+  <div class="row center">
+    <h5 class="header col s12 light white-text">Decide Once and For All!</h5>
+  </div>
+  <div class="row center">
+  <%= link_to "Get Started", login_path, class: "btn-large waves-effect waves-light deep-orange lighten-1" %>
+  </div>
 </div>
-
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 col-lg-offset-4">
-      <h2>Movie Night? Why Not:</h2>
-  </div>
-  </div>
-  <div class="row movie_box">
-  <div class="col-lg-2">
-    <%= image_tag "search_for_spock.jpg" %>
+    <div class="col s12 m4">
+      <div class="icon-block">
+        <h2 class="center blue-grey-text"><i class="mdi-social-group"></i></h2>
+        <h5>Create Groups With Your Friends</h5>
+        A taste of glory. Bannerman others dragons ser ward. Never resting, mare's milk realm dagger, our sun shines bright, squire righteous in wrath your grace. Bloody mummers moon and stars suckling pig. Let it be written honeyed locusts court. Lance dungeon slave brothel weirwood. Spiced wine. The seven, none so fierce tourney, arbor gold arbor gold, rouse me not green dreams murder. No song so sweet. Ser gallant. Mulled wine ever vigilant dirk. 
+      </div>
     </div>
-    <div class="col-lg-5 col-lg-offset-5">
+    <div class="col s12 m4">
+      <div class="icon-block">
+        <h2 class="center blue-grey-text"><i class="mdi-av-movie"></i></h2>
+        <h5>Vote on Movies</h5>
+        Duis sapien maegi, mare's milk, seven hells, your grace, ward. Bloody mummers, no foe may pass, we light the way, we do not sow sandsilk magister. Take the black wolf. Spiced wine. Never resting. The seven smallfolk, sister snow, the wall, pavilion darkness, m'lord. Pride and purpose, death weirwood, your grace, green dreams, maid. Ironborn arbor gold honeyed locusts.
+      </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="icon-block">
+        <h2 class="center blue-grey-text"><i class="mdi-social-mood"></i></h2>
+        <h5>Stop Fights</h5>
+        Mare's milk righteous in wrath. You know nothing, arbor gold, dwarf murder, destrier chamber, throne. We do not sow. Let me soar. Arbor gold mulled wine. Ours is the fury rouse me not. Never resting, the seven your grace, take the black sorcery, suckling pig moon and stars magister. Moon always pays his debts. None so wise. Green dreams. Winter is coming. Moon-flower juice. Ser spiced wine.
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s6 offset-s3">
+      <h4>Just For Fun, How About:</h4>
+    </div>
+  </div>
+  <div class="row movie_row">
+    <div class="col s12 m4">
+      <%= image_tag "search_for_spock.jpg" %>
+    </div>
+    <div class="col s12 m8">
       <h3>Star Trek III: Search for Spock</h3>
       <p>"Admiral Kirk and his bridge crew risk their careers stealing the decommissioned Enterprise to return to the restricted Genesis planet to recover Spock's body."</p>
     </div>
   </div>
   <div class="row">
   <hr>
-    <div class="col-lg-6 col-lg-offset-4">
-      <h2>Popular Sci-Fi Movies</h2>
+    <div class="col s6 offset-s3">
+      <h4>Popular Sci-Fi Movies</h4>
     </div>
-    <div class="col-lg-3 col-lg-offset-1 movie_box_single">
+    <div class="col s12 m4">
       <%= image_tag "2001.jpg" %>
     </div>
-    <div class="col-lg-3 movie_box_single">
+    <div class="col s12 m4">
       <%= image_tag "back_to_the_future.jpg" %>
     </div>
-    <div class="col-lg-3 movie_box_single">
+    <div class="col s12 m4">
       <%= image_tag "district9.jpg" %>
     </div>
   </div>
