@@ -5,5 +5,6 @@ class HomeController < ApplicationController
   end
 
   def search
+    @user_watchlist = UserWatchlist.new
   end
 end

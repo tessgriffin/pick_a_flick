@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :user_watchlists
+  has_many :group_watchlists
   has_many :movies, through: :user_watchlists
 
   def self.find_or_create_by_auth(auth)
