@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :groups
 
+  resources :group_watchlists, only: [:create]
+
   resources :movies
 
 
@@ -15,5 +17,5 @@ Rails.application.routes.draw do
   get "login",      to: "sessions#new"
   delete "/logout", to: "sessions#destroy"
 
-  get "/user_watchlist", to: "user_watchlists#create"
+  post "/user_watchlist", to: "user_watchlists#create"
 end

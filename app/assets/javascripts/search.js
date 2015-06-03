@@ -10,8 +10,15 @@ var printMovies = function(input){
                + movie.poster_path
                + "'/><br>"
                + movie.name
-               + "-"
+               + "<a data-movie-id='"
                + movie.id
+               + "'data-movie-title='"
+               + movie.name
+               + "'data-poster-path='"
+               + movie.poster_path
+               + "' class='btn watchlist' href='#'>"
+               + "Add To Watchlist"
+               + "</a>"
                + "</li></div>");
     }
     else {
@@ -20,8 +27,15 @@ var printMovies = function(input){
                + movie.poster_path
                + "'/><br>"
                + movie.title
-               + "-"
+               + "<a data-movie-id='"
                + movie.id
+               + "'data-movie-title='"
+               + movie.title
+               + "'data-poster-path='"
+               + movie.poster_path
+               + "' class='btn watchlist' href='#'>"
+               + "Add To Watchlist"
+               + "</a>"
                + "</li></div>");
     }
   });
@@ -41,6 +55,15 @@ $(function() {
     })
     .then(function(success) {
       printMovies(success.results)
+    });
+    $(document).on("click",".watchlist",function(event){
+      event.preventDefault();
+      var movieData = { imdb_id: $(this).data("movieId"), title: $(this).data("movieTitle"), poster_path: $(this).data("posterPath")}
+      $.post("/user_watchlist", movieData, function(railsControllerResponse){
+        console.log(railsControllerResponse);
+          console.log("passed");
+      });
+
     });
   })
 });
