@@ -3,4 +3,8 @@ class HomeController < ApplicationController
 
   def home
   end
+
+  def search
+    @user_watchlist = UserWatchlist.new
+  end
 end
