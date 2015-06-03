@@ -1,8 +1,25 @@
-<%= form_tag("/search", method: "get", remote: true) do %>
-  <%= label_tag(:search_box, "Search for:") %>
-  <%= text_field_tag(:search_box) %>
-  <%= submit_tag "Search", id: "search_button" %>
-<% end %>
+<div class="row">
+  <div class="input-field col s12">
+  <%= form_tag("/search", method: "get", remote: true) do %>
+    <%= label_tag(:search_box, "Search for movie, tv show, person") %>
+    <%= text_field_tag(:search_box) %>
+    <%= submit_tag "Search", class: "btn-large waves-effect waves-light deep-orange lighten-1", id: "search_button" %>
+  <% end %>
+  </div>
+</div>
 
-<ul id="searched_movies">
-</ul>
+<!-- <ul id="searched_movies">
+</ul> -->
+
+<div class="col s4 movie-search">
+  <ul id="searched_movies">
+  </ul>
+</div>
+<div class="col s4 movie-search">
+  <ul id="searched_movies">
+  </ul>
+</div>
+<div class="col s4 movie-search">
+  <ul id="searched_movies">
+  </ul>
+</div>
