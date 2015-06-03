@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601232109) do
+ActiveRecord::Schema.define(version: 20150603020425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "movies", force: :cascade do |t|
+    t.string   "title"
+    t.string   "imdb_id"
+    t.string   "poster_path"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "user_watchlists", force: :cascade do |t|
+    t.integer  "movie_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_watchlists", ["movie_id"], name: "index_user_watchlists_on_movie_id", using: :btree
+  add_index "user_watchlists", ["user_id"], name: "index_user_watchlists_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "uid"
@@ -28,4 +46,6 @@ ActiveRecord::Schema.define(version: 20150601232109) do
     t.string   "token"
   end
 
+  add_foreign_key "user_watchlists", "movies"
+  add_foreign_key "user_watchlists", "users"
 end
