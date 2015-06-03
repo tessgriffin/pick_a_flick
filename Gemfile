@@ -13,6 +13,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-github'
 gem 'figaro'
 gem 'materialize-sass'
+gem 'responders'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
