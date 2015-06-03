@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :groups
 
+  resources :group_watchlists, only: [:create]
+
   resources :movies
 
 

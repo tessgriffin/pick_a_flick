@@ -7,6 +7,7 @@
   <div class="row">
   <div class=" col s8 offset-s2">
   <%= link_to "My Groups", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"%>
+  <%= link_to "Create New Group", new_group_path, class: "btn waves-effect waves-light blue-grey lighten-1"%>
   <%= link_to "View All Groups", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"%>
   <% link_to "Pick For #{current_user.username}", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"-%>
   <%= link_to "Rate More Flicks", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"%>
