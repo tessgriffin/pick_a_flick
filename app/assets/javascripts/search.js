@@ -12,7 +12,29 @@
 var printMovies = function(input){
   var movies = [];
   $.each(input, function(i, movie){
-    movies.push( "<li>" + "<img src='http://image.tmdb.org/t/p/w300" + movie.poster_path + "'/>" + movie.title + "-" + movie.id + "</li>");
+    if(movie.poster_path === undefined || movie.poster_path === null){
+      movie.poster_path = "/zh9DXJhBdHVVaWiDURTipADamcK.jpg"
+    }
+    if(movie.title === undefined){
+      movies.push( "<div class='col lg4 search_div'><li>"
+               + "<img src='http://image.tmdb.org/t/p/w300"
+               + movie.poster_path 
+               + "'/><br>" 
+               + movie.name
+               + "-" 
+               + movie.id 
+               + "</li></div>");
+    }
+    else {
+      movies.push( "<div class='col lg4 search_div'><li>"
+               + "<img src='http://image.tmdb.org/t/p/w300"
+               + movie.poster_path 
+               + "'/><br>" 
+               + movie.title 
+               + "-" 
+               + movie.id 
+               + "</li></div>");
+    }
   });
   $("<ul/>", {
     "id": "searched_movies",
@@ -21,6 +43,9 @@ var printMovies = function(input){
 };
 
 $(function() {
+  $("#search_button").on("click", function(){
+    $(".search_div").remove();
+  });
   $( "#search_button" ).click(function() {
     console.log($("#search_box").val());
     var input = $("#search_box").val();
