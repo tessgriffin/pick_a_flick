@@ -1,0 +1,5 @@
+<%= form_tag("/search", method: "get", remote: true) do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search"), id: "search-box" %>
+<% end %>
