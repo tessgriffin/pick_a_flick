@@ -27,7 +27,7 @@
   </div>
   <hr>
   <div class="row">
-    <div class="col s6 offset-s3">
+    <div class="col s6 offset-s4">
       <h4>Your Groups</h4>
   </div>
   </div>
@@ -40,6 +40,14 @@
     </div>
     <div class="col l4">
       <%= image_tag "district9.jpg" %><h4>Aliens</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col l4 offset-l4 user_dashboard_watchlist">
+      <h4>Your Watchlist</h4>
+      <% @movies.each do |movie| %>
+      <h5><%= movie.title %></h5>
+      <% end %>
     </div>
   </div>
 </div>
