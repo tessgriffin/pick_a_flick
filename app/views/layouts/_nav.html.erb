@@ -1,6 +1,6 @@
 <nav>
-  <div class="nav-wrapper blue-grey darken-4">
-    <%= link_to "FlickTreck", root_path, class: "brand-logo" %>
+  <div class="nav-wrapper blue-grey darken-4 logo">
+    <%= link_to "Pick-A-Flick", root_path, class: "brand-logo" %>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% if current_user %>
         <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
