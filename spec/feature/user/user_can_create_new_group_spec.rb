@@ -2,7 +2,18 @@ require 'rails_helper'
 
 
 feature 'new watch group' do
-  let!(:user) { User.create(uid: "123", username: "Jack Nicholson", email: "crazyman@email.com") }
+  let!(:user) { User.create(uid: "123",
+                            username: "Jack Nicholson",
+                            email: "crazyman@email.com")
+                            }
+
+  let!(:movie)          { Movie.create(title: "Avatar", 
+                                       imdb_id: "12")
+                                      }
+
+  let!(:user_watchlist) { UserWatchlist.create(user_id: user.id,
+                                               movie_id: movie.id)
+                                               }
 
   it 'creates a new group with valid parameters' do
 

@@ -17,10 +17,21 @@
     </div>
   </div>
   <div class="row">
-    <% @movies.each do |movie| %>
+    <% @user_watchlists.each do |watchlist| %>
       <div class="col l2 user_dashboard_watchlist">
-        <h6><%= movie.title %></h6>
-        <img src="http://image.tmdb.org/t/p/w300<%= movie.poster_path %>"/>
+        <ul>
+          <li>
+            <h6><%= watchlist.movie.title %></h6>
+            <img src="http://image.tmdb.org/t/p/w300<%= watchlist.movie.poster_path %>"/>
+              <ul>
+                <% if watchlist.watched? %>
+                  <li data-id="<%= watchlist.id %>" data-watched="false" class="watched-true-user-watchlist"><%= button_to "watched", "#", class: "btn  blue-grey lighten-3" %></li>
+                <% else %>
+                  <li data-id="<%= watchlist.id %>" data-watched="true" class="watched-true-user-watchlist"><%= button_to "mark as watched", "#", class: "btn  amber" %></li>
+                <% end %>
+              </ul>
+          </li>
+        </ul>
       </div>
       <% end %>
   </div>

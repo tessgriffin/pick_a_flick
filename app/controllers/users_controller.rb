@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @movies = current_user.movies
+    @user_watchlists = current_user.user_watchlists
   end
 end
