@@ -4,7 +4,7 @@ var printMovies = function(input){
     if(movie.poster_path === undefined || movie.poster_path === null){
       movie.poster_path = "/zh9DXJhBdHVVaWiDURTipADamcK.jpg"
     }
-    if(movie.title === undefined){
+    if(movie.title === undefined || movie.title === null ){
       movies.push( "<div class='col lg4 search_div'><h5>"
                + movie.name
                + "</h5><li>"
@@ -61,9 +61,9 @@ $(function() {
     $(document).on("click",".watchlist",function(event){
       event.preventDefault();
       var movieData = { imdb_id: $(this).data("movieId"), title: $(this).data("movieTitle"), poster_path: $(this).data("posterPath")}
-      $.post("/user_watchlist", movieData, function(railsControllerResponse){
-        console.log(railsControllerResponse);
-          console.log("passed");
+      $.post("/user_watchlists", movieData, function(railsControllerResponse){
+        alert("Sucessfully Added to Watchlist")
+
       });
 
     });
