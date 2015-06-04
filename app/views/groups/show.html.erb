@@ -1,22 +1,27 @@
-<h1 class="group-title"><%= @group.name %></h1>
-<h4><%= @group.description %></h4>
+<div class="container">
+  <h2 class="group-title"><%= @group.name %></h2>
+  <h4><%= @group.description %></h4>
 
-<div id="user-watchlist">
-  <%= form_tag(@group_watchlist) do %>
+  <div id="user-watchlist">
+    <%= form_tag(@group_watchlist) do %>
+      <ul>
+        <%= collection_check_boxes(:group, :movie_ids, @movies, :id, :title) do |b| %>
+        <%= hidden_field_tag(:group_id, @group.id)%>
+          <li>
+          <%= b.check_box %>
+          <%= b.label %>
+          </li>
+        <% end %>
+      </ul>
+      <%= submit_tag "Add to Group Watchlist" %>
+    <% end %>
+  </div>
+  <div class="group-watchlist">
+    <h3><%= @group.name %> Watchlist</h3>
     <ul>
-      <% @movies.each do |movie| %>
-      <li><%= check_box_tag :title %><%= label_tag :title, movie.title %></li>
-      <%= hidden_field_tag(:movie_id, movie.id) %>
-      <%= hidden_field_tag(:group_id, @group.id) %>
+      <% @group.movies.each do |movie| %>
+        <li><%= movie.title %></li>
       <% end %>
     </ul>
-    <%= submit_tag "Add to Group Watchlist" %>
-  <% end %>
-</div>
-<div class="group-watchlist">
-  <ul>
-    <% @group.movies.each do |movie| %>
-      <li><%= movie.title %></li>
-    <% end %>
-  </ul>
+  </div>
 </div>

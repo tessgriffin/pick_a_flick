@@ -171,5 +171,10 @@ Search Page
 ------------------------------- */
 
 .search_div {
-  height: 500px;
+  height: 630px;
+  max-width: 320px;
+}
+
+.user_dashboard_watchlist img {
+  max-height: 250px;
 }
