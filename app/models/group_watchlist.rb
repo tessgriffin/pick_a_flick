@@ -1,7 +1,7 @@
 class GroupWatchlist < ActiveRecord::Base
   belongs_to :movie
-  belongs_to :user
+  belongs_to :group
 
   validates :group_id,  presence: true
-  validates :movie_id, presence: true
+  validates :movie_id, presence: true, uniqueness: true
 end

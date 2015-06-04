@@ -5,12 +5,24 @@
     </div>
   </div>
   <div class="row">
-  <div class=" col s8 offset-s2">
+  <div class=" col s12 offset-s2">
   <%= link_to "My Groups", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"%>
   <%= link_to "Create New Group", new_group_path, class: "btn waves-effect waves-light blue-grey lighten-1"%>
-  <%= link_to "View All Groups", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"%>
-  <% link_to "Pick For #{current_user.username}", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"-%>
-  <%= link_to "Rate More Flicks", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"%>
+  <%= link_to "Pick For #{current_user.username}", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1" %>
+  <%= link_to "Search For Flicks", search_path, class: "btn waves-effect waves-light blue-grey lighten-1"%>
+  </div>
+  <div class="row">
+    <div class="col l4 offset-l4 user_dashboard_watchlist">
+      <h4>Your Watchlist</h4>
+    </div>
+  </div>
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col l2 user_dashboard_watchlist">
+        <h6><%= movie.title %></h6>
+        <img src="http://image.tmdb.org/t/p/w300<%= movie.poster_path %>"/>
+      </div>
+      <% end %>
   </div>
   <div class="row">
     <div class="col s6 offset-s3">
@@ -41,14 +53,6 @@
     </div>
     <div class="col l4">
       <%= image_tag "district9.jpg" %><h4>Aliens</h4>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col l4 offset-l4 user_dashboard_watchlist">
-      <h4>Your Watchlist</h4>
-      <% @movies.each do |movie| %>
-      <h5><%= movie.title %></h5>
-      <% end %>
     </div>
   </div>
 </div>

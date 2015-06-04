@@ -1,11 +1,13 @@
-<h1>Create A Group!</h1>
-<%= form_for(@group) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="container">
+  <h2>Create A Group!</h2>
+  <%= form_for(@group) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
 
-  <%= f.submit "Submit" %>
+    <%= f.submit "Submit" %>
 
-<% end %>
+  <% end %>
+</div>
