@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="row">
-  <div class=" col s12 offset-s2">
+  <div class="col s12 offset-s1">
   <%= link_to "My Groups", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"%>
   <%= link_to "Create New Group", new_group_path, class: "btn waves-effect waves-light blue-grey lighten-1"%>
   <%= link_to "Pick For #{current_user.username}", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1" %>
@@ -18,20 +18,16 @@
   </div>
   <div class="row">
     <% @user_watchlists.each do |watchlist| %>
-      <div class="col l2 user_dashboard_watchlist">
-        <ul>
-          <li>
-            <h6><%= watchlist.movie.title %></h6>
-            <img src="http://image.tmdb.org/t/p/w300<%= watchlist.movie.poster_path %>"/>
-              <ul>
-                <% if watchlist.watched? %>
-                  <li data-id="<%= watchlist.id %>" data-watched="false" class="watched-true-user-watchlist"><%= button_to "watched", "#", class: "btn  blue-grey lighten-3" %></li>
-                <% else %>
-                  <li data-id="<%= watchlist.id %>" data-watched="true" class="watched-true-user-watchlist"><%= button_to "mark as watched", "#", class: "btn  amber" %></li>
-                <% end %>
-              </ul>
-          </li>
-        </ul>
+      <div class="col l3 m4 s12 user_dashboard_watchlist">
+        <h6 class="center align"><%= watchlist.movie.title %></h6>
+        <img src="http://image.tmdb.org/t/p/w300<%= watchlist.movie.poster_path %>"/>
+          <ul>
+            <% if watchlist.watched? %>
+              <li data-id="<%= watchlist.id %>" data-watched="false" class="watched-true-user-watchlist"><%= button_to "watched", "#", class: "btn  blue-grey lighten-3" %></li>
+            <% else %>
+              <li data-id="<%= watchlist.id %>" data-watched="true" class="watched-true-user-watchlist"><%= button_to "mark as watched", "#", class: "btn  amber" %></li>
+            <% end %>
+          </ul>
       </div>
       <% end %>
   </div>
