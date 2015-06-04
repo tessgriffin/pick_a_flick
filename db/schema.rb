@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604130159) do
+ActiveRecord::Schema.define(version: 20150604221008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 20150604130159) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "user_groups", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "active",     default: false
+  end
+
+  add_index "user_groups", ["group_id"], name: "index_user_groups_on_group_id", using: :btree
+  add_index "user_groups", ["user_id"], name: "index_user_groups_on_user_id", using: :btree
 
   create_table "user_watchlists", force: :cascade do |t|
     t.integer  "movie_id"
@@ -62,6 +73,8 @@ ActiveRecord::Schema.define(version: 20150604130159) do
 
   add_foreign_key "group_watchlists", "groups"
   add_foreign_key "group_watchlists", "movies"
+  add_foreign_key "user_groups", "groups"
+  add_foreign_key "user_groups", "users"
   add_foreign_key "user_watchlists", "movies"
   add_foreign_key "user_watchlists", "users"
 end

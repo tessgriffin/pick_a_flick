@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
   has_many :user_watchlists
-  has_many :group_watchlists
+  has_many :user_groups
   has_many :movies, through: :user_watchlists
+  has_many :groups, through: :user_groups
 
   validates :username, uniqueness: true
   validates :email, uniqueness: true
-  validates :phone, uniqueness: true
 
   def self.find_or_create_by_auth(auth)
     user = User.find_or_create_by(provider: auth.provider, uid: auth.uid)
