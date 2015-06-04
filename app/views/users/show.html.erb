@@ -9,6 +9,7 @@
   <%= link_to "My Groups", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"%>
   <%= link_to "Create New Group", new_group_path, class: "btn waves-effect waves-light blue-grey lighten-1"%>
   <%= link_to "Pick For #{current_user.username}", user_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1" %>
+  <%= link_to "Pending Group Invitations", pending_invitations_path(current_user), class: "btn waves-effect waves-light blue-grey lighten-1"%>
   <%= link_to "Search For Flicks", search_path, class: "btn waves-effect waves-light blue-grey lighten-1"%>
   </div>
   <div class="row">
