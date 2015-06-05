@@ -2,27 +2,11 @@
 Main Styles
 ------------------------------- */
 
-body {
-/*  background-color: #CACACA !important;
-  font-size: 16px !important;*/
-}
-
-
 hr {
   border-top: 2px solid gray !important;
-  margin-top: 100px !important;
-  margin-bottom: 50px !important;
+  margin-top: 60px !important;
+  margin-bottom: 60px !important;
 }
-
-/*h1 {
-  font-family: "Roddenberry" !important;
-  font-size: 2em !important;
-}
-
-h2{
-  font-family: "Roddenberry" !important;
-  font-size: 2.5em !important;
-}*/
 
 @font-face {
     font-family: "Roddenberry";
@@ -171,12 +155,28 @@ Search Page
 ------------------------------- */
 
 .search_div {
-  height: 630px;
-  max-width: 320px;
+  height: 580px;
+}
+
+.search_div img {
+  height: 400px;
+  width: 275px;
+}
+
+.search_div h5 {
+  height: 60px;
+  font-size: 18px;
+  width: 275px;
+  margin-top: 0px !important;
+}
+
+.search_div a {
+  width: 275px;
 }
 
 .user_dashboard_watchlist img {
-  max-height: 250px;
+  width: 200px;
+  max-height: 280px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -186,4 +186,13 @@ Search Page
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 200px;
+}
+
+.user_dashboard_watchlist h6 {
+  height: 40px;
+}
+
+.search_field {
+  margin-top: 30px !important;
 }
