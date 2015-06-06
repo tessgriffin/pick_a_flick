@@ -16,12 +16,12 @@ class UserGroupsController < ApplicationController
   def update
     user_group = UserGroup.find_by(id: params[:id])
     user_group.update(active: params[:active])
-    redirect_to current_user
+    redirect_to user_groups(current_user)
   end
 
   def destroy
     user_group = UserGroup.find_by(id: params[:id])
     user_group.destroy
-    redirect_to current_user
+    redirect_to :back
   end
 end
