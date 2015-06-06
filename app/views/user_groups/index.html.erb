@@ -1,0 +1,26 @@
+<h1 class="logo">Your Groups</h1>
+<div class="container">
+  <% @user_groups.each do |user_group| %>
+    <% if user_group.active? %>
+      <h4><%= user_group.group.name %></h4>
+      <p><%= user_group.group.description %></p>
+    <% else %>
+  <div class="row">
+    <div class="col s3">
+      <h4><%= user_group.group.name %></h4>
+    </div>
+    <div class="col s4 invitations">
+      <%= button_to "Accept Invitation", update_user_group_path(user_group, active: true), method: :put, class: "btn blue-grey" %>
+    </div>
+    <div class="col s3 invitations">
+      <%= button_to "Decline Invitaion", user_group_path(user_group), method: :delete, class: "btn blue-grey" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <p><%= user_group.group.description %></p>
+    </div>
+  </div>
+  <% end %>
+<% end %>
+</div>
