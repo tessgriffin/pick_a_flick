@@ -56,7 +56,12 @@ $(function() {
     var data = $.getJSON("http://api.themoviedb.org/3/search/multi?query=" + input + "&language=en&api_key=171eae1994f298598bb52dd4d2a6d877", function(){
     })
     .then(function(success) {
+      if (success.results.length === 0) {
+        $(".#searched_movies").html("Search returned no results.")
+      }
+      else {
       printMovies(success.results)
+      }
     });
     $(document).on("click",".watchlist",function(event){
       event.preventDefault();
