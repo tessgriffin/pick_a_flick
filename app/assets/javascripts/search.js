@@ -5,13 +5,13 @@ var printMovies = function(input){
       movie.poster_path = "/zh9DXJhBdHVVaWiDURTipADamcK.jpg"
     }
     if(movie.title === undefined || movie.title === null ){
-      movies.push( "<div class='col lg4 search_div'><h5>"
-               + movie.name
-               + "</h5><li>"
+      movies.push( "<div class='col lg4 search_div'>"
+               + "<li>"
                + "<img src='http://image.tmdb.org/t/p/w300"
                + movie.poster_path
-               + "'/><br>"
-               + "<a data-movie-id='"
+               + "'/><h5>"
+               + movie.name
+               + "</h5><a data-movie-id='"
                + movie.id
                + "'data-movie-title='"
                + movie.name
@@ -23,13 +23,13 @@ var printMovies = function(input){
                + "</li></div>");
     }
     else {
-      movies.push( "<div class='col lg4 search_div'><h5>"
-               + movie.title
-               + "</h5><li>"
+      movies.push( "<div class='col lg4 search_div'>"
+               + "<li>"
                + "<img src='http://image.tmdb.org/t/p/w300"
                + movie.poster_path
-               + "'/><br>"
-               + "<a data-movie-id='"
+               + "'/><h5>"
+               + movie.title
+               + "</h5><a data-movie-id='"
                + movie.id
                + "'data-movie-title='"
                + movie.title
