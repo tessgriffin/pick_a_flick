@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604221008) do
+ActiveRecord::Schema.define(version: 20150607220206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150604221008) do
   create_table "group_watchlists", force: :cascade do |t|
     t.integer "group_id"
     t.integer "movie_id"
+    t.integer "ranking",  default: 50
   end
 
   add_index "group_watchlists", ["group_id"], name: "index_group_watchlists_on_group_id", using: :btree
@@ -71,10 +72,23 @@ ActiveRecord::Schema.define(version: 20150604221008) do
     t.string   "token"
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.integer  "group_watchlist_id"
+    t.integer  "user_id"
+    t.string   "vote"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "votes", ["group_watchlist_id"], name: "index_votes_on_group_watchlist_id", using: :btree
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
+
   add_foreign_key "group_watchlists", "groups"
   add_foreign_key "group_watchlists", "movies"
   add_foreign_key "user_groups", "groups"
   add_foreign_key "user_groups", "users"
   add_foreign_key "user_watchlists", "movies"
   add_foreign_key "user_watchlists", "users"
+  add_foreign_key "votes", "group_watchlists"
+  add_foreign_key "votes", "users"
 end

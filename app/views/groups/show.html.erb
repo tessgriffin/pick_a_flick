@@ -2,6 +2,16 @@
   <h4 class="group-title"><%= @group.name %></h4>
   <h5><%= @group.description %></h5>
   <hr>
+  <div class="row">
+    <div class="col l4">
+      <h4>Group Pick:</h4>
+    </div>
+    <div class="col l8 user_dashboard_watchlist">
+      <h6 class="center-align"><%= @group.group_watchlists.first.movie.title %></h6>
+      <img src="http://image.tmdb.org/t/p/w300<%= @group.group_watchlists.first.movie.poster_path %>"/>
+    </div>
+  </div>
+  <hr>
   <div class="group-watchlist">
     <h4><%= @group.name %> Watchlist</h4>
     <div class="row">
@@ -12,8 +22,13 @@
       </div>
       <% @group.group_watchlists.each do |watchlist| %>
         <div class="col l3 m4 s12 user_dashboard_watchlist">
-          <h6 class="center align"><%= watchlist.movie.title %></h6>
+          <h6 class="center-align"><%= watchlist.movie.title %></h6>
           <img src="http://image.tmdb.org/t/p/w300<%= watchlist.movie.poster_path %>"/>
+          <h6 class="center-align">Raking: <%= watchlist.ranking %></h6>
+          <div class="col l8 offset-l2">
+          <%= link_to "+", votes_upvote_path(watchlist), method: :post, class: "btn green lighten-3 inline_btn" %>
+          <%= link_to "-", votes_downvote_path(watchlist), method: :post, class: "btn deep-orange lighten-1 inline_btn" %>
+          </div>
         </div>
       <% end %>
     </div>
