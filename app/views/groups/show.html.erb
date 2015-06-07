@@ -1,9 +1,15 @@
 <div class="container">
-  <h2 class="group-title center-align"><%= @group.name %></h2>
-  <h4 class="center-align"><%= @group.description %></h4>
+  <h4 class="group-title"><%= @group.name %></h4>
+  <h5><%= @group.description %></h5>
+  <hr>
   <div class="group-watchlist">
-    <h3 class="center-align"><%= @group.name %> Watchlist</h3>
+    <h4><%= @group.name %> Watchlist</h4>
     <div class="row">
+      <div class="center-align">
+        <% if @group.group_watchlists.empty? %>
+          <h5>Looks like this group has no movies. Why don't you add some?</h5>
+        <% end %>
+      </div>
       <% @group.group_watchlists.each do |watchlist| %>
         <div class="col l3 m4 s12 user_dashboard_watchlist">
           <h6 class="center align"><%= watchlist.movie.title %></h6>
@@ -12,10 +18,11 @@
       <% end %>
     </div>
   </div>
+  <hr>
   <div id="user-watchlist">
-    <h4 class="center-align">Add From Your Watchlist</h4>
     <div class="row">
-      <div class="col l4 offset-l4">
+      <div class="col l6">
+        <h5>Add From Your Watchlist</h5>
         <%= form_tag(@group_watchlist) do %>
           <ul>
             <%= collection_check_boxes(:group, :movie_ids, @movies, :id, :title) do |b| %>
@@ -29,16 +36,15 @@
           <%= submit_tag "Add to Group Watchlist", class: "btn blue-grey lighten-1" %>
         <% end %>
       </div>
+      <div class="add-user-to-group col l6">
+        <h5>Add a User to Your Group</h5>
+        <%= form_tag("/user_groups", method: "post") do %>
+        <%= label_tag :email %>
+        <%= text_field_tag :email %>
+        <%= hidden_field_tag :group_id, "#{@group.id}" %>
+        <%= submit_tag "Submit", class: "btn blue-grey" %>
+        <% end  %>
+      </div>
     </div>
-  </div>
-  <div class="add-user-to-group">
-    <h5>Add a User to Your Group</h5>
-    <%= form_tag("/user_groups", method: "post") do %>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-    <%= hidden_field_tag :group_id, "#{@group.id}" %>
-    <%= submit_tag "Submit" %>
-    <% end  %>
-
   </div>
 </div>

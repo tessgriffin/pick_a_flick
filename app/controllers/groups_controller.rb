@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
   def create
     group = Group.new(group_params)
     if group.save
+      UserGroup.create(user_id: current_user.id, group_id: group.id, active: true)
       flash.now[:success] = "Group successfully created."
       redirect_to group_path(group.id)
     else

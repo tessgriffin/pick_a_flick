@@ -62,10 +62,10 @@ $(function() {
       event.preventDefault();
       var movieData = { imdb_id: $(this).data("movieId"), title: $(this).data("movieTitle"), poster_path: $(this).data("posterPath")}
       $.post("/user_watchlists", movieData, function(railsControllerResponse){
-        alert("Sucessfully Added to Watchlist")
-
       });
-
+      $(this).removeClass("blue-grey lighten-1")
+      $(this).addClass("green lighten-1")
+      $(this).text("added")
     });
   })
 });

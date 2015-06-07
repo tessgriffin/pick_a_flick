@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "login",      to: "sessions#new"
   delete "/logout", to: "sessions#destroy"
 
+  get  "/user_watchlists", to: "user_watchlists#index"
   post "/user_watchlists", to: "user_watchlists#create"
   post "/user_watchlists/update", to: "user_watchlists#update"
 
