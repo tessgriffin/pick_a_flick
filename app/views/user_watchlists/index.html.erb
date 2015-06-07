@@ -14,6 +14,7 @@
             <% else %>
               <li data-id="<%= watchlist.id %>" data-watched="true" class="watched-true-user-watchlist"><%= button_to "mark as watched", "#", class: "btn  amber" %></li>
             <% end %>
+            <%= link_to "remove", user_watchlist_path(watchlist), method: :delete, class: "btn deep-orange lighten-2" %>
           </ul>
       </div>
     <% end %>

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get  "/user_watchlists", to: "user_watchlists#index"
   post "/user_watchlists", to: "user_watchlists#create"
   post "/user_watchlists/update", to: "user_watchlists#update"
+  delete "/user_watchlists/:id", to: "user_watchlists#destroy", as: :user_watchlist
 
   get "/user_groups", to: "user_groups#index"
   post "/user_groups", to: "user_groups#create"
