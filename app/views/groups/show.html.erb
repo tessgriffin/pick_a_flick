@@ -7,8 +7,12 @@
       <h4>Group Pick:</h4>
     </div>
     <div class="col l8 user_dashboard_watchlist">
-      <h6 class="center-align"><%= @group.group_watchlists.first.movie.title %></h6>
-      <img src="http://image.tmdb.org/t/p/w300<%= @group.group_watchlists.first.movie.poster_path %>"/>
+      <% if @group.group_watchlists.empty? %>
+          <h5>No favorite movie, add one from your watchlist.</h5>
+      <% else %>
+        <h6 class="center-align"><%= @group.group_watchlists.first.movie.title %></h6>
+        <img src="http://image.tmdb.org/t/p/w300<%= @group.group_watchlists.first.movie.poster_path %>"/>
+      <% end %>
     </div>
   </div>
   <hr>
