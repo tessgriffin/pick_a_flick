@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
   skip_before_action :authorize!
 
   def create
-      @user = User.find_or_create_by_auth(auth)
+    @user = User.find_or_create_by_auth(auth)
+
     if @user && auth.provider == "twitter"
       session[:user_id] = @user.id
       flash.now[:success] = "You successfully logged in. Please fill in your Email and Phone number for full site functionality."
