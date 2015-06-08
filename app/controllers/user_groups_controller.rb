@@ -2,6 +2,8 @@ class UserGroupsController < ApplicationController
 
   def index
     @user_groups = current_user.user_groups
+    @pending = current_user.user_groups.inactive
+    @active = current_user.user_groups.active
   end
 
   def create

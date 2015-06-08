@@ -1,9 +1,12 @@
 <div class="container">
   <h4><%= current_user.username %> Dashboard</h4>
   <hr>
-  <h4>Your Watchlist</h4>
+  <h4 class="col s4">Your Watchlist</h4>
   <div class="row">
-    <% @user_watchlists.each do |watchlist| %>
+    <% if @user_watchlists.empty? %>
+      <h5 class="inline">Looks like your watchlist is empty, why not</h5><%= link_to "search for flicks", search_path, class: "btn blue-grey"%>
+    <% end %>
+    <% @user_watchlists.take(4).each do |watchlist| %>
       <div class="col l3 m4 s12 user_dashboard_watchlist">
         <h6 class="center align"><%= watchlist.movie.title %></h6>
         <img src="http://image.tmdb.org/t/p/w300<%= watchlist.movie.poster_path %>"/>
@@ -13,9 +16,15 @@
             <% else %>
               <li data-id="<%= watchlist.id %>" data-watched="true" class="watched-true-user-watchlist"><%= button_to "mark as watched", "#", class: "btn  amber" %></li>
             <% end %>
+            <%= link_to "remove", user_watchlist_path(watchlist), method: :delete, class: "btn deep-orange lighten-2" %>
           </ul>
       </div>
       <% end %>
+  </div>
+  <div class="row">
+    <div class="col s2 offset-s10">
+      <%= link_to "view all", user_watchlists_path, class: "btn blue-grey center align" %>
+    </div>
   </div>
   <hr>
   <h4>Top Recommendation in Sci-Fi</h4>
@@ -24,21 +33,22 @@
     <%= image_tag "terminator2.jpg" %>
     </div>
     <div class="col l8 offset-l2">
-      <h3>Terminator 2: Judgment Day</h3>
+      <h5>Terminator 2: Judgment Day</h5>
       <p>"A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her young son, John Connor, from a more advanced cyborg, made out of liquid metal."</p>
     </div>
   </div>
   <hr>
   <h4>Your Groups</h4>
   <div class="row">
-    <div class="col l4">
-      <%= image_tag "2001.jpg"%><h4>Space Cadets</h4>
-    </div>
-    <div class="col l4">
-      <%= image_tag "back_to_the_future.jpg" %><h4>Futurists</h4>
-    </div>
-    <div class="col l4">
-      <%= image_tag "district9.jpg" %><h4>Aliens</h4>
+    <% @active_groups.take(4).each do |user_group| %>
+      <div class="col l3">
+        <h5><%= link_to user_group.group.name, group_path(user_group.group) %></h5>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col l3 offset-l9">
+    <%= link_to "View All", user_groups_path, class: "btn blue-grey"%>
     </div>
   </div>
 </div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <h4>Your Watchlist</h4>
+  <div class="row">
+    <% if @user_watchlists.empty? %>
+      <h5 class="inline">Looks like your watchlist is empty, why not</h5><%= link_to "search for flicks", search_path, class: "btn blue-grey"%>
+    <% end %>
+    <% @user_watchlists.each do |watchlist| %>
+      <div class="col l3 m4 s12 user_dashboard_watchlist">
+        <h6 class="center align"><%= watchlist.movie.title %></h6>
+        <img src="http://image.tmdb.org/t/p/w300<%= watchlist.movie.poster_path %>"/>
+          <ul>
+            <% if watchlist.watched? %>
+              <li data-id="<%= watchlist.id %>" data-watched="false" class="watched-true-user-watchlist"><%= button_to "watched", "#", class: "btn  blue-grey lighten-3" %></li>
+            <% else %>
+              <li data-id="<%= watchlist.id %>" data-watched="true" class="watched-true-user-watchlist"><%= button_to "mark as watched", "#", class: "btn  amber" %></li>
+            <% end %>
+            <%= link_to "remove", user_watchlist_path(watchlist), method: :delete, class: "btn deep-orange lighten-2" %>
+          </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

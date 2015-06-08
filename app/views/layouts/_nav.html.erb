@@ -4,7 +4,7 @@
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% if current_user %>
         <li><%= link_to "My Account", user_path(current_user) %></li>
-        <li><%= link_to "My Watchlist", "#" %></li>
+        <li><%= link_to "My Watchlist", user_watchlists_path %></li>
         <li><%= link_to "My Groups", user_groups_path %></li>
         <li><%= link_to "Search Flicks", search_path %></li>
         <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
