@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
   has_many :groups, through: :user_groups
 
   validates :username, uniqueness: true
-  validates :email, uniqueness: true
 
   def current_user?
     id?
