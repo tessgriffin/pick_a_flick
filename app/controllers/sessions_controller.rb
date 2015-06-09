@@ -3,15 +3,17 @@ class SessionsController < ApplicationController
   skip_before_action :authorize!
 
   def create
-    @user = User.find_or_create_by_auth(auth)
+    user = User.find_or_create_by_auth(auth)
 
-    if @user && auth.provider == "twitter"
-      session[:user_id] = @user.id
-      flash.now[:success] = "You successfully logged in. Please fill in your Email and Phone number for full site functionality."
-      redirect_to @user
-    elsif @user && auth.provider == "github"
-      session[:user_id] = @user.id
-      redirect_to @user, success: "You successfully logged in. Please fill in your Phone number for full site functionality."
+    if !user.id.nil? && auth.provider == "twitter"
+      session[:user_id] = user.id
+      if user.email.nil?
+        flash[:danger] = "Enter a valid email address"
+        redirect_to edit_user_path(user)
+      else
+        flash.now[:success] = "You successfully logged in. Please fill in your Email and Phone number for full site functionality."
+        redirect_to user_path(user)
+      end
     else
       flash.now[:danger] = @user.errors.full_messages.join(", ")
       redirect_to root_path

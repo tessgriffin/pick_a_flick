@@ -57,7 +57,7 @@ $(function() {
     })
     .then(function(success) {
       if (success.results.length === 0) {
-        $("#no-results").html("Search returned no results.")
+        $("#no-results").text("Search returned no results.")
       }
       else {
         $("#no-results").empty();
