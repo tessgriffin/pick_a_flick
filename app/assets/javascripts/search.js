@@ -57,20 +57,21 @@ $(function() {
     })
     .then(function(success) {
       if (success.results.length === 0) {
-        $(".#searched_movies").html("Search returned no results.")
+        $("#no-results").html("Search returned no results.")
       }
       else {
-      printMovies(success.results)
+        $("#no-results").empty();
+        printMovies(success.results)
       }
     });
     $(document).on("click",".watchlist",function(event){
       event.preventDefault();
       var movieData = { imdb_id: $(this).data("movieId"), title: $(this).data("movieTitle"), poster_path: $(this).data("posterPath")}
       $.post("/user_watchlists", movieData, function(railsControllerResponse){
-        alert("Sucessfully Added to Watchlist")
-
       });
-
+      $(this).removeClass("blue-grey lighten-1")
+      $(this).addClass("green lighten-1")
+      $(this).text("added")
     });
   })
 });

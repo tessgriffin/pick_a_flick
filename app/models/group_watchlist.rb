@@ -4,4 +4,6 @@ class GroupWatchlist < ActiveRecord::Base
 
   validates :group_id,  presence: true
   validates :movie_id, presence: true, uniqueness: true
+
+  default_scope { order('ranking DESC') }
 end

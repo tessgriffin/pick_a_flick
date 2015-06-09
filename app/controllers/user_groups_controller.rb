@@ -2,11 +2,13 @@ class UserGroupsController < ApplicationController
 
   def index
     @user_groups = current_user.user_groups
+    @pending = current_user.user_groups.inactive
+    @active = current_user.user_groups.active
   end
 
   def create
     user = User.find_by(email: params[:email])
-    UserGroup.create(user_id: user.id, group_id: params[:group_id])
+    UserGroup.create(user_id: user.id, group_id: params[:id])
   end
 
   def pending

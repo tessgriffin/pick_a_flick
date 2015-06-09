@@ -5,7 +5,10 @@ class User < ActiveRecord::Base
   has_many :groups, through: :user_groups
 
   validates :username, uniqueness: true
-  validates :email, uniqueness: true
+
+  def current_user?
+    id?
+  end
 
   def self.find_or_create_by_auth(auth)
     user = User.find_or_create_by(provider: auth.provider, uid: auth.uid)

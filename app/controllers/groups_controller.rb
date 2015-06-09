@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :ensure_group_member, only: [:show]
+  before_action :ensure_active, only: [:show]
 
   def new
     @group = Group.new
@@ -7,7 +9,8 @@ class GroupsController < ApplicationController
   def create
     group = Group.new(group_params)
     if group.save
-      flash.now[:success] = "Group successfully created."
+      UserGroup.create(user_id: current_user.id, group_id: group.id, active: true)
+      flash[:success] = "Group successfully created."
       redirect_to group_path(group.id)
     else
       flash.now[:danger] = group.errors.full_messages.join(", ")
