@@ -8,7 +8,7 @@ class UserGroupsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-    UserGroup.create(user_id: user.id, group_id: params[:group_id])
+    UserGroup.create(user_id: user.id, group_id: params[:id])
   end
 
   def pending

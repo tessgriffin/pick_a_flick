@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authorize!
 
-  helper_method :current_user, :ensure_group_member, :ensure_active
+  helper_method :current_user, :ensure_group_member, :ensure_active, :verify_votes
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id] )
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def ensure_group_member
-    group = Group.find(params[:id])
+    group = Group.find_by!(id: params[:id])
     unless group.in?(current_user.groups)
       redirect_to user_path(current_user)
     end
@@ -42,5 +42,13 @@ class ApplicationController < ActionController::Base
 
   def current_permission
     @current_permission ||= Permissions.new(current_user)
+  end
+
+  def verify_votes
+    session[:vote] = [] if session[:vote].nil?
+    if session[:vote].any? { |vote| vote["group_watchlist_id"] == params[:id].to_i && vote["user_id"] == current_user.id}
+      flash[:danger] = "Already Voted on this Flick"
+      redirect_to request.referrer
+    end
   end
 end

@@ -45,7 +45,7 @@
         <%= form_tag(@group_watchlist) do %>
           <ul>
             <%= collection_check_boxes(:group, :movie_ids, @movies, :id, :title) do |b| %>
-            <%= hidden_field_tag(:group_id, @group.id)%>
+            <%= hidden_field_tag(:id, @group.id)%>
               <li>
               <%= b.check_box %>
               <%= b.label %>
@@ -60,7 +60,7 @@
         <%= form_tag("/user_groups", method: "post") do %>
         <%= label_tag :email %>
         <%= text_field_tag :email %>
-        <%= hidden_field_tag :group_id, "#{@group.id}" %>
+        <%= hidden_field_tag :id, "#{@group.id}" %>
         <%= submit_tag "Submit", class: "btn blue-grey" %>
         <% end  %>
       </div>

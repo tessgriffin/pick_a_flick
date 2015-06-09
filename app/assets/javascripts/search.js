@@ -59,7 +59,7 @@ $(function() {
       if (success.results.length === 0) {
         $("#no-results").text("Search returned no results.")
       }
-      else if (success.results.length >= 1) {
+      else {
         $("#no-results").empty();
         printMovies(success.results)
       }
