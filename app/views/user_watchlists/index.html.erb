@@ -1,5 +1,5 @@
 <div class="container">
-  <h4>Your Watchlist</h4>
+  <h4><%= link_to "@#{current_user.username}'s", "https://www.twitter.com/#{current_user.username}" %> Watchlist</h4>
   <div class="row">
     <% if @user_watchlists.empty? %>
       <h5 class="inline">Looks like your watchlist is empty, why not</h5><%= link_to "search for flicks", search_path, class: "btn blue-grey"%>

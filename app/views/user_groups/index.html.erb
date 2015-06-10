@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col l3">
-      <h4>Your Groups</h4>
+    <div class="col l6">
+      <h4><%= link_to "@#{current_user.username}'s", "https://www.twitter.com/#{current_user.username}" %> Groups</h4>
     </div>
-    <div class="col l3 offset-l6 button-top">
+    <div class="col l3 offset-l3 button-top">
       <%= link_to "Create New Group", new_group_path, class: "btn blue-grey"%>
     </div>
   </div>
