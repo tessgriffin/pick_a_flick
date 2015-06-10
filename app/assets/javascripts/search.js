@@ -19,16 +19,17 @@ var printMovies = function(input){
                + "</li></div>");
     }
     else if(movie.title === undefined || movie.title === null ){
+      var title = movie.name.replace("'", "")
       movies.push( "<div class='col lg4 search_div'>"
                + "<li>"
                + "<img src='http://image.tmdb.org/t/p/w300"
                + movie.poster_path
                + "'/><h5>"
-               + movie.name
+               + title
                + "</h5><a data-movie-id='"
                + movie.id
                + "'data-movie-title='"
-               + movie.name
+               + title
                + "'data-poster-path='"
                + movie.poster_path
                + "' class='btn watchlist waves-effect waves-light blue-grey lighten-1' href='#'>"
@@ -37,16 +38,18 @@ var printMovies = function(input){
                + "</li></div>");
     }
     else {
+      var title = movie.title.replace("'", "")
+      console.log(title)
       movies.push( "<div class='col lg4 search_div'>"
                + "<li>"
                + "<img src='http://image.tmdb.org/t/p/w300"
                + movie.poster_path
                + "'/><h5>"
-               + movie.title
+               + title
                + "</h5><a data-movie-id='"
                + movie.id
                + "'data-movie-title='"
-               + movie.title
+               + title
                + "'data-poster-path='"
                + movie.poster_path
                + "' class='btn watchlist waves-effect waves-light blue-grey lighten-1' href='#'>"

@@ -20,7 +20,7 @@ class UserWatchlistsController < ApplicationController
   end
 
   def destroy
-    UserWatchlist.destroy(params[:id])
+    UserWatchlist.destroy(params[:id].to_i)
     redirect_to user_watchlists_path
   end
 

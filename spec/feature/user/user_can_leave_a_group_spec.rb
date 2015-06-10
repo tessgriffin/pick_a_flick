@@ -13,8 +13,8 @@ feature 'leave a group' do
 
   it 'allows user that belongs to group to leave group' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-    visit user_path(user)
-    click_on "My Groups"
+    visit user_groups_path
+    
     expect(current_path).to eq(user_groups_path)
     expect(page).to have_content("The House of Cards")
     expect(page).to have_content("shaky foundation")

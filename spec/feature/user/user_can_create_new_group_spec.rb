@@ -7,7 +7,7 @@ feature 'new watch group' do
                             email: "crazyman@email.com")
                             }
 
-  let!(:movie)          { Movie.create(title: "Avatar", 
+  let!(:movie)          { Movie.create(title: "Avatar",
                                        imdb_id: "12")
                                       }
 
@@ -18,7 +18,7 @@ feature 'new watch group' do
   it 'creates a new group with valid parameters' do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-    visit user_path(user)
+    visit user_groups_path(user)
     click_on "Create New Group"
 
     expect(current_path).to eq new_group_path
