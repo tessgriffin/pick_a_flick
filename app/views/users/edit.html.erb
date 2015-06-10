@@ -1,5 +1,5 @@
 <div class="container">
-<h1>Update Your Profile, @<%= @user.username %>:</h1>
+<h3>Update Your Profile, <%= link_to "@#{current_user.username}", "https://www.twitter.com/#{current_user.username}" %>:</h3>
 
 <div class="col l3 m4 s12">
   <%= form_for @user do |f| %>
