@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         redirect_to edit_user_path(user)
       else
         flash.now[:success] = "You successfully logged in. Please fill in your Email and Phone number for full site functionality."
-        redirect_to user_path(user)
+        redirect_to user_groups_path
       end
     else
       flash.now[:danger] = @user.errors.full_messages.join(", ")

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     user = User.find_by!(id: params[:id])
     if user.update(user_params)
       flash[:success] = "Profile updated successfully"
-      redirect_to user_path(user)
+      redirect_to user_groups_path
     else
       flash.now[:danger] = "Please try again"
       render :edit
