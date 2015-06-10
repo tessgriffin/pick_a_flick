@@ -8,9 +8,20 @@ class UserGroupsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-    user_group = UserGroup.create(user_id: user.id, group_id: params[:id])
-    flash[:danger] = user_group.errors.full_messages.join(", ") 
-    redirect_to user_groups_path(user)
+    if user.nil?
+      flash[:danger] = "No user with that email"
+      redirect_to request.referrer
+    else
+      user_group = UserGroup.new(user_id: user.id, group_id: params[:id])
+
+      if user_group.save
+        flash[:success] = "User invited"
+        redirect_to request.referrer
+      else
+        flash[:danger] = user_group.errors.full_messages.join(", ")
+        redirect_to user_groups_path(user)
+      end
+    end
   end
 
   def pending
