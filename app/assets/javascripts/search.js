@@ -2,7 +2,8 @@ var printMovies = function(input){
   var movies = [];
   $.each(input, function(i, movie){
     if(movie.poster_path === undefined || movie.poster_path === null){
-      movies.push( "<div class='col lg4 search_div'>"
+      if(movie.title === undefined || movie.title === null ){
+        movies.push( "<div class='col lg4 search_div'>"
                + "<li>"
                + "<img src='https://d3a8mw37cqal2z.cloudfront.net/assets/f996aa2014d2ffddfda8463c479898a3/images/no-poster-w185.jpg'/>"
                + "<h5>"
@@ -17,6 +18,24 @@ var printMovies = function(input){
                + "Add To Watchlist"
                + "</a>"
                + "</li></div>");
+      }
+      else {
+        movies.push( "<div class='col lg4 search_div'>"
+               + "<li>"
+               + "<img src='https://d3a8mw37cqal2z.cloudfront.net/assets/f996aa2014d2ffddfda8463c479898a3/images/no-poster-w185.jpg'/>"
+               + "<h5>"
+               + movie.title
+               + "</h5><a data-movie-id='"
+               + movie.id
+               + "'data-movie-title='"
+               + movie.title
+               + "'data-poster-path='"
+               + movie.poster_path
+               + "' class='btn watchlist waves-effect waves-light blue-grey lighten-1' href='#'>"
+               + "Add To Watchlist"
+               + "</a>"
+               + "</li></div>");
+      }
     }
     else if(movie.title === undefined || movie.title === null ){
       movies.push( "<div class='col lg4 search_div'>"
