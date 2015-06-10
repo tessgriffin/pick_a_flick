@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "user watchlist" do
+feature "user watchlist" do
   context "a registered logged in user" do
       let!(:user) { User.create(uid: "123",
                                 username: "Jack Nicholson",
@@ -11,20 +11,21 @@ RSpec.describe "user watchlist" do
                                            imdb_id: "12")
                                           }
 
-      let!(:user_watchlist_movie) { UserWatchlist.create(user_id: user.id,
-                                                   movie_id: movie.id)
-                                                   }
     it "can mark a movie as watched" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-      visit user_path(user)
 
-      click_link "edit watchlist"
+      user_watchlist_movie = UserWatchlist.create(user_id: user.id, movie_id: movie.id)
 
-      expect(current_path).to eq(edit_user_watchlist_path)
+      visit user_watchlists_path
 
-      page.check("Watched")
 
-      expect(user_watchlist_movie.watched?).to be true
+      expect(user_watchlist_movie.watched?).to be false
+      expect(page).to have_content(movie.title)
+
+      click_link "remove"
+
+      expect(page).not_to have_content(movie.title)
+
     end
   end
 end

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "groups users" do
+feature "groups users" do
   context "can invite others to join group" do
     let!(:user) { User.create(uid: "123",
                               username: "Jack Nicholson",
@@ -16,20 +16,23 @@ RSpec.describe "groups users" do
                                          description: "Jack Nicholson crazy")
                                          }
 
+    let!(:user_group)     { UserGroup.create(user_id: user.id, group_id: group.id)}
+
 
     it "when a member of the group" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit group_path(group.id)
-
-      fill_in "user_group[email]", with: invited_user.email
+      visit user_groups_path
+      click_button "Accept Invite"
+      click_link "Visit Group"
+      fill_in "email", with: invited_user.email
       click_button "Submit"
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(invited_user)
 
-      visit pending_invitations_path(invited_user.id)
+      visit user_groups_path
 
-      click_button "Accept Invitation"
+      click_button "Accept Invite"
 
       expect(group.users).to include(invited_user)
     end
