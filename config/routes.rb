@@ -29,6 +29,6 @@ Rails.application.routes.draw do
 
   get "/user_groups/pending_invitations/:id", to: "user_groups#pending", as: :pending_invitations
 
-  post "/votes/upvote/:id", to: "votes#upvote", as: :votes_upvote 
-  post "/votes/downvote/:id", to: "votes#downvote", as: :votes_downvote 
+  post "/votes/upvote/:id", to: "votes#upvote", as: :votes_upvote
+  post "/votes/downvote/:id", to: "votes#downvote", as: :votes_downvote
 end

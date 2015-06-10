@@ -9,10 +9,17 @@
   </div>
   <div class="row">
     <% @active.each do |user_group| %>
-      <div class="col l4">
+      <div class="col l3 m4 s12 user_dashboard_watchlist">
       <h5><%= user_group.group.name %></h5>
-      <p><%= user_group.group.description %></p>
-      <%= link_to "Visit Group", group_path(user_group.group), class: "btn blue-grey" %>
+      <% if user_group.group.description.empty? %>
+        <p><em>no description given</em></p>
+      <% else %>
+        <p><%= user_group.group.description %></p>
+      <% end %>
+      <ul>
+        <li><%= link_to "Visit Group", group_path(user_group.group), class: "btn blue-grey" %></li>
+        <li><%= button_to "Leave Group", user_group_path(user_group), method: :delete, class: "btn red" %></li>
+      </ul>
       </div>
     <% end %>
   </div>
