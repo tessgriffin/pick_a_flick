@@ -1,5 +1,5 @@
 <div class="container">
-<h1>Update Your Profile, <%= @user.username %>:</h1>
+<h1>Update Your Profile, @<%= @user.username %>:</h1>
 
 <div class="col l3 m4 s12">
   <%= form_for @user do |f| %>
@@ -7,8 +7,6 @@
   <%= f.label :email %>
   <%= f.email_field :email %>
 
-  <%= f.label :phone%>
-  <%= f.telephone_field :phone %>
   <%= f.submit class: "btn  amber" %>
   <% end %>
 </div>
