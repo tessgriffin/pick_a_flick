@@ -13,6 +13,22 @@ hr {
     src: url('Roddenberry.ttf') format("truetype");
 }
 
+.flash_message {
+  height: 50px;
+  font-size: 2em;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.success {
+  background-color: #81c784;
+}
+
+.danger {
+  background-color: #b71c1c;
+  color: white;
+}
+
 /*-------------------------------
 Nav Bar
 ------------------------------- */
