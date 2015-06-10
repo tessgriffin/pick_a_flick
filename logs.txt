@@ -1,0 +1,469 @@
+commit 7d0ac4fa1ec8dcf34f5e63ad4f6ca0da61f93125
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Mon Jun 8 12:57:18 2015 -0600
+
+    removed user email validations
+
+commit 57220fd0f4f545405e651fb9d9471b37992b7be7
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Mon Jun 8 10:19:44 2015 -0600
+
+    precompile for heroku
+
+commit 40b316f43ee9663c5bf484ce37bfc62459f4370b
+Merge: ad5256d 0db3d98
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Mon Jun 8 08:55:52 2015 -0600
+
+    Merge pull request #46 from Carmer/fixing_creating_group
+    
+    okayed by Kyle :)
+
+commit 0db3d98fb75c27b5c29281d43e1bb73e1f8b905b
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Mon Jun 8 08:48:30 2015 -0600
+
+    Added conditional to fix error when creating new group
+
+commit ad5256d9d170d96aa2d4cbf5a3b2bef3a6f2d442
+Merge: 9a76a06 429eb43
+Author: kylehenson <khenson.kh@gmail.com>
+Date:   Mon Jun 8 00:01:23 2015 -0600
+
+    Merge pull request #45 from Carmer/groups
+    
+    Changed colors with js on search page when movie is added. Added indi…
+
+commit 429eb43a75e28271b788822b5fc902db27e00805
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Sun Jun 7 17:42:45 2015 -0600
+
+    Created votes and ability for person to upvote and downvote a film. Have not yet implemented validations so you can vote more than once. Thought we could go over that together?
+
+commit a6b81382296cfd18167fbf31b0733a5292d7f9ba
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Sun Jun 7 13:13:03 2015 -0600
+
+    Added remove button for user watchlists
+
+commit aa51bb64092da3d14fe4d0a87709d454bd85b54e
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Sun Jun 7 12:19:02 2015 -0600
+
+    Changed colors with js on search page when movie is added. Added individual user watch page. Dashboard only samples the first 4 movies. Restyled user group page and group page
+
+commit 9a76a06d618bfd31701c34f1610df89fac227429
+Merge: 46bb389 770ae5d
+Author: kylehenson <khenson.kh@gmail.com>
+Date:   Sat Jun 6 14:49:20 2015 -0600
+
+    Merge pull request #44 from Carmer/watched_js
+    
+    Adds when you click on watched, it changes the js to match the other …
+
+commit 770ae5d9c4bafa9a314d29bb96b94f36bfd76112
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Sat Jun 6 13:11:10 2015 -0600
+
+    Adds when you click on watched, it changes the js to match the other buttons
+
+commit 46bb3890d615d2e1665da6f3a51c9da153fdb241
+Merge: 1001c73 311cb14
+Author: Andrew Carmer <CarmerAndrew@gmail.com>
+Date:   Sat Jun 6 11:10:01 2015 -0500
+
+    Merge pull request #43 from kylehenson/UserGroupsForUser
+    
+    Users are able to view their groups as well as group invitations.
+
+commit 311cb1427268f35032cd4a0ac069a34c1abad337
+Author: Kyle Henson <khenson.kh@gmail.com>
+Date:   Fri Jun 5 22:47:03 2015 -0600
+
+    Fixed more redirecting for user groups
+
+commit d2759bddd01355db22585b6537486d9c38061a59
+Author: Kyle Henson <khenson.kh@gmail.com>
+Date:   Fri Jun 5 22:42:47 2015 -0600
+
+    Fixed redirecting with user group invitations
+
+commit 4d5d3871d5cb52e216083a084a90d16bad6d7279
+Author: Kyle Henson <khenson.kh@gmail.com>
+Date:   Fri Jun 5 22:18:40 2015 -0600
+
+    Users are able to view their groups as well as group invitations.
+    They are also able to accept or deny invitations
+
+commit 1001c73841b3869097ce02488a1abb9bf821f1c6
+Merge: 1458578 312de7a
+Author: kylehenson <khenson.kh@gmail.com>
+Date:   Fri Jun 5 18:30:43 2015 -0600
+
+    Merge pull request #42 from Carmer/stlying_changes
+    
+    Made styling changes. Images are consistent sizes on search page and …
+
+commit 312de7a15e38f87a8681546e98b5c080f8df3285
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Fri Jun 5 15:28:54 2015 -0600
+
+    Made styling changes. Images are consistent sizes on search page and user dashboard. Buttons are the same width as images.
+
+commit 145857865abbc8a9fc3d3cd618d0d6405e455064
+Merge: b445a2a c201e16
+Author: kylehenson <khenson.kh@gmail.com>
+Date:   Thu Jun 4 16:41:12 2015 -0600
+
+    Merge pull request #41 from Carmer/user_groups
+    
+    User groups
+
+commit c201e1611552eb1ffda56998160fdf0b6bfffe6c
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Thu Jun 4 16:40:29 2015 -0600
+
+    added user groups and active status for inviation to group
+
+commit 3c9d04b47c9811e6d2e3d953a5131da87f70a5ee
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Thu Jun 4 11:26:43 2015 -0600
+
+    css precompile for heroku
+
+commit 4b336dc60d98a3201cefa7f1a6548aee5e5ec3b1
+Merge: 72b87b9 b445a2a
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Thu Jun 4 11:23:41 2015 -0600
+
+    Merge branch 'master' of github.com:Carmer/Flick_Treck
+
+commit b445a2a9755360f38929455c61ccedaa58f1ccf8
+Merge: fe560a8 a3ea3ef
+Author: kylehenson <khenson.kh@gmail.com>
+Date:   Thu Jun 4 11:22:40 2015 -0600
+
+    Merge pull request #23 from Carmer/columns
+    
+    changed layout slightly on group show and user show pages
+
+commit a3ea3efbc28bdd72f25a6801ebd6ac379da7f124
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Thu Jun 4 11:21:41 2015 -0600
+
+    changed layout slightly on group show and user show pages
+
+commit 72b87b9935857598ea56b99a9e9e3da6227ee540
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Thu Jun 4 11:13:46 2015 -0600
+
+    precompile production for heroku
+
+commit dec6203318a6a6f7ebd1c3ac65c2619d56aa123a
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Thu Jun 4 11:07:06 2015 -0600
+
+    precompile for heroku
+
+commit 71881c079e4ac09e0b09f982042d96b459a86081
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Thu Jun 4 11:00:18 2015 -0600
+
+    add 12factor for logging
+
+commit fe560a87e9e0b6aa6f423fd73ded7a3e623e1f7b
+Merge: 4dc8b4c 2abbad6
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Thu Jun 4 10:03:40 2015 -0600
+
+    Merge pull request #21 from Carmer/watched-movies
+    
+    added watched to user_watchlist, modified routes to match plurality, …
+
+commit 2abbad63ae01ab0786c6ae7d3ee5e58468ca3fb6
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Thu Jun 4 10:01:41 2015 -0600
+
+    added watched to user_watchlist, modified routes to match plurality, added watched/mak as watched to user watchlist
+
+commit 4dc8b4cb8aaf2193b0cc98b9199ff951e8c56058
+Merge: 76c0894 82fe637
+Author: kylehenson <khenson.kh@gmail.com>
+Date:   Wed Jun 3 22:45:27 2015 -0600
+
+    Merge pull request #20 from Carmer/styling_search_pages
+    
+    Fixed checkboxes bug. Added styling to search page. Added log into tw…
+
+commit 82fe637c301d086107924f2400b512d9a9317f58
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Wed Jun 3 21:49:32 2015 -0600
+
+    Fixed checkboxes bug. Added styling to search page. Added log into twitter on home page
+
+commit 76c0894f64cd7a9e1493f8bd91b181d56083718a
+Merge: 3ffc3b2 2fe3e1a
+Author: Andrew Carmer <CarmerAndrew@gmail.com>
+Date:   Wed Jun 3 16:50:10 2015 -0600
+
+    Merge pull request #14 from Carmer/add-to-watchlist
+    
+    Add to watchlist
+
+commit 2fe3e1a6f2b07ed7be49a75f685fc09426874db9
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Wed Jun 3 16:49:21 2015 -0600
+
+    added groupwatchlist, and views
+
+commit 34fd97d565d9701369474ad500c51943eeea1d6c
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Wed Jun 3 14:54:40 2015 -0600
+
+    watchlist on user show page
+
+commit 327d9d69959d2248169792f41097d7ac1e27e56e
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Wed Jun 3 14:47:41 2015 -0600
+
+    validations, post button from search.js for movie/create and user_watchlist/create
+
+commit 3ffc3b29d61e422cfc222b09ab4965490cf16b44
+Merge: a0d6b73 1a4f904
+Author: kylehenson <khenson.kh@gmail.com>
+Date:   Wed Jun 3 13:31:17 2015 -0600
+
+    Merge pull request #13 from Carmer/groups-and-movie-list
+    
+    Groups and movie list
+
+commit 1a4f904ceea8e57052e829a987823aa2f7d5d8e9
+Merge: 3122150 a0d6b73
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Wed Jun 3 13:28:54 2015 -0600
+
+    merge conflict resolution
+
+commit 3122150eabef6e077f53f8143242be89df698853
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Wed Jun 3 13:23:46 2015 -0600
+
+    added groups and group_watchlist.
+
+commit a0d6b73395557f016a436db7f8def785e185bb61
+Merge: e249014 cce3895
+Author: Andrew Carmer <CarmerAndrew@gmail.com>
+Date:   Wed Jun 3 13:22:34 2015 -0600
+
+    Merge pull request #12 from kylehenson/FrontEnd
+    
+    Front end for search.js and home page
+
+commit cce389506b14d2573c2cbbfdd4aea72b95f670c9
+Merge: 879c0e0 e249014
+Author: Kyle Henson <khenson.kh@gmail.com>
+Date:   Wed Jun 3 13:21:06 2015 -0600
+
+    Fix merge conflict
+
+commit 879c0e09b06619fc7079c566f783983693b79cc5
+Author: Kyle Henson <khenson.kh@gmail.com>
+Date:   Wed Jun 3 13:16:19 2015 -0600
+
+    Changes to Search and home page
+
+commit e249014013f30cdaef7a4c6b8d9f820128a01da7
+Merge: d38fab3 811627d
+Author: Andrew Carmer <CarmerAndrew@gmail.com>
+Date:   Wed Jun 3 13:15:19 2015 -0600
+
+    Merge pull request #11 from Carmer/messin_with_css
+    
+    Added styling to search page
+
+commit 811627dc60fc8fb28e22965c1a67d04ac48f1ddf
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Wed Jun 3 13:14:34 2015 -0600
+
+    Added styling to search page
+
+commit 3f1a3c35166c4d8deda0f2e770ab5dc48f3c2b0b
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Tue Jun 2 21:26:04 2015 -0600
+
+    search view
+
+commit d38fab3f0d0734da28738c4a87ce7b1c1ab0ac2f
+Merge: 15a18ad cf90c71
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Tue Jun 2 20:52:10 2015 -0600
+
+    Merge pull request #8 from kylehenson/JquerySearch
+    
+    Nice job :)
+
+commit 15a18adad59c3c68f5b29b96f30ecda0491dda96
+Merge: cf827b8 17757d1
+Author: kylehenson <khenson.kh@gmail.com>
+Date:   Tue Jun 2 20:52:08 2015 -0600
+
+    Merge pull request #7 from Carmer/movie_model
+    
+    Added initial models for movies and user watchlists
+
+commit cf90c71c82b78df170f0405964f73ea76a42c27a
+Author: Kyle Henson <khenson.kh@gmail.com>
+Date:   Tue Jun 2 20:49:50 2015 -0600
+
+    Search bar working with AJAX
+
+commit 17757d111622c0077da5c9f3157ae14cceae6772
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Tue Jun 2 20:42:21 2015 -0600
+
+    Added initial models for movies and user watchlists
+
+commit 0bbe6894335b665e216b02118d384f9f4a165604
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Tue Jun 2 17:27:03 2015 -0600
+
+    Work in progress for jquery
+
+commit cf827b8408a630fb13d9cc7dec14879455c200bf
+Merge: 1023cfb 5f16865
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Tue Jun 2 13:55:26 2015 -0600
+
+    Merge pull request #6 from Carmer/omniA
+    
+    Omni a
+
+commit 5f168652917a8a5f755c8b3fc1d9924238eddaad
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Tue Jun 2 13:54:26 2015 -0600
+
+    cleared cache
+
+commit c2da7871df47cc2914cd18a12fd3436fc1d2ce90
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Tue Jun 2 13:35:19 2015 -0600
+
+    github
+
+commit 1023cfbb7105c892ca9771d0431b8860e0421e6c
+Author: Andrew Carmer <CarmerAndrew@gmail.com>
+Date:   Tue Jun 2 13:34:06 2015 -0600
+
+    Delete application.yml
+
+commit b74fd2c789b79536f3280d9585f43cb80d6f9a85
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Tue Jun 2 10:15:23 2015 -0600
+
+    precompiled assets
+
+commit dc1f741049c89b6e479b6f61246469600c488344
+Merge: 6f85e08 6d244b7
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Tue Jun 2 09:01:55 2015 -0600
+
+    Merge branch 'master' of github.com:Carmer/Flick_Treck
+
+commit 6f85e083e08d0557ebc84869cc940a0a270ec7fc
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Tue Jun 2 09:01:50 2015 -0600
+
+    overwrite
+
+commit 6d244b73a4e5022b3ecda0cf708cf4f2abc0fdde
+Merge: f4aa82a b33699c
+Author: Andrew Carmer <CarmerAndrew@gmail.com>
+Date:   Tue Jun 2 09:00:58 2015 -0600
+
+    Merge pull request #4 from Carmer/working_on_materialize
+    
+    Changed the landing page and user dashboard page to use Materialize
+
+commit b33699cb74130ac90f0a304443abf7dfab1044f0
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Tue Jun 2 07:31:42 2015 -0600
+
+    Changed the landing page and user dashboard page to use Materialize
+
+commit f4aa82a57f333f5ece13f3ea68f13ed8d16456db
+Merge: b9f8e1a ea9e648
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Mon Jun 1 20:21:05 2015 -0600
+
+    Merge pull request #3 from Carmer/omniauth
+    
+    Looks good. We'll probably want to do the two omniauth thing in the future
+
+commit ea9e6489ccac9fa80b4ebdfd0d51b3824f5f4dcd
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Mon Jun 1 17:58:40 2015 -0600
+
+    twitter authorization and changed user dashboard view for user info. Added User table. ' modified:   Gemfile
+    modified:   Gemfile.lock
+    modified:   app/controllers/application_controller.rb
+    modified:   app/controllers/home_controller.rb
+    modified:   app/controllers/sessions_controller.rb
+    modified:   app/models/user.rb
+    modified:   app/views/layouts/_nav.html.erb
+    modified:   app/views/layouts/application.html.erb
+    modified:   app/views/users/show.html.erb
+    modified:   config/routes.rb'
+
+commit 946ce367946eeb6c5a5f7d3b24a8d044aebc8a03
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Mon Jun 1 17:04:49 2015 -0600
+
+    initial omni auth things
+
+commit b9f8e1a5d69dccf8d4edd27a99bfeb55b90832fc
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Mon Jun 1 14:11:44 2015 -0600
+
+    precompile
+
+commit f19839b7b65715c951ba6a4e1871ef2133d8205d
+Merge: 1e01ff3 8431a31
+Author: Andrew Carmer <CarmerAndrew@gmail.com>
+Date:   Sun May 31 19:32:04 2015 -0600
+
+    Merge pull request #2 from Carmer/beginning_css
+    
+    Initial views and styling for landing page, user dashboard, and login…
+
+commit 8431a318aedebe612a90d681bbb3c16153aa17c1
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Sun May 31 19:27:05 2015 -0600
+
+    Initial views and styling for landing page, user dashboard, and login pages
+
+commit 1e01ff30817105d05091f2e309b287d82c541687
+Merge: fd06381 a78f7c4
+Author: Tess Griffin <tessjgriffin@gmail.com>
+Date:   Sun May 31 13:57:50 2015 -0600
+
+    Merge pull request #1 from Carmer/controllers
+    
+    added controllers: users, groups, movies, user_groups, user_movies, u…
+
+commit a78f7c426cde22045a4e66673fe213b89863d9e4
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Sun May 31 12:37:54 2015 -0600
+
+    readme
+
+commit 36eeb52b1689e7c6f68c4bdfbce0e1363f740f5d
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Sun May 31 12:17:46 2015 -0600
+
+    added controllers: users, groups, movies, user_groups, user_movies, user_movies/ratings, home
+
+commit fd06381f7deb8aed5e50b8185a5f9b12255dbeff
+Author: Carmer <carmerandrew@gmail.com>
+Date:   Sun May 31 11:54:55 2015 -0600
+
+    re-newed

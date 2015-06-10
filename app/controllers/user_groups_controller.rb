@@ -8,7 +8,9 @@ class UserGroupsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-    UserGroup.create(user_id: user.id, group_id: params[:id])
+    user_group = UserGroup.create(user_id: user.id, group_id: params[:id])
+    flash[:danger] = user_group.errors.full_messages.join(", ") 
+    redirect_to user_groups_path(user)
   end
 
   def pending
