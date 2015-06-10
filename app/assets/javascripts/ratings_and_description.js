@@ -22,7 +22,7 @@ if ($(".omdb-page").length) {
                                   + "<p>" + "Actors: " + success.Actors + "</p>"
                                   + "<p>" + "Director: " + success.Director + "</p>"
                                   + "<p>" + "Genre: " + success.Genre + "</p>"
-                                  + "<p>" + "Rated: " + success.Rated )
+                                  + "<p>" + "Meta Score: " + success.Metascore )
     }
   });
 
