@@ -2,7 +2,7 @@ $(function() {
   var movie = $(".movie-info ul");
 
 
-if ($(".omdp-page").length) {
+if ($(".omdb-page").length) {
   $.ajax( {
     url:"http://www.omdbapi.com/?t=" + $(".movie-info").data("movieTitle").replace(/\?/g,'').split(" ").join("+") + "&y=&plot=short&r=json",
     dataType: "json",
