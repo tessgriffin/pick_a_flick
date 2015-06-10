@@ -38,7 +38,7 @@ var printMovies = function(input){
       }
     }
     else if(movie.title === undefined || movie.title === null ){
-      var title = movie.name.replace("'", "")
+      var title = movie.name.replace("'", "&#8217")
       movies.push( "<div class='col lg4 search_div'>"
                + "<li>"
                + "<img src='http://image.tmdb.org/t/p/w300"
@@ -57,7 +57,7 @@ var printMovies = function(input){
                + "</li></div>");
     }
     else {
-      var title = movie.title.replace("'", "")
+      var title = movie.title.replace("'", "&#8217")
       console.log(title)
       movies.push( "<div class='col lg4 search_div'>"
                + "<li>"
