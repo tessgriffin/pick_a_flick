@@ -12,7 +12,7 @@
       <div class="col l3 m4 s12 user_dashboard_watchlist">
       <h5><%= user_group.group.name %></h5>
       <% if user_group.group.description.empty? %>
-        <br>
+        <p><em>no description given</em></p>
       <% else %>
         <p><%= user_group.group.description %></p>
       <% end %>
