@@ -26,4 +26,19 @@ class UserGroupsController < ApplicationController
     user_group.destroy
     redirect_to :back
   end
+  # def update
+  #   if params[:active].empty?
+  #     user_group = UserGroup.find_by(user_id: current_user.id, group_id: params[:id])
+  #   else
+  #     user_group = UserGroup.find_by(id: params[:id])
+  #   end
+  #   user_group.update(active: params[:active])
+  #   redirect_to user_groups_path
+  # end
+  #
+  # def destroy
+  #   user_group = UserGroup.find_by(id: params[:id])
+  #   user_group.destroy
+  #   redirect_to :back
+  # end
 end
