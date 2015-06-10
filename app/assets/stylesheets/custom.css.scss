@@ -238,7 +238,7 @@ Search Page
 
 .inline_btn {
   display: inline-block !important;
-  width: 50px !important;
+  width: 20px !important;
 }
 /*-------------------------------
 User Groups Page
@@ -246,4 +246,8 @@ User Groups Page
 
 .invitations {
   padding-top: 2% !important;
+}
+
+.small_divider {
+  width: 300px;
 }

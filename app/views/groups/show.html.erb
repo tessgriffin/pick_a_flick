@@ -1,48 +1,45 @@
 <div class="container omdb-page">
   <h3 class="group-title center align"><%= @group.name %></h3>
-  <h5>Group info:</h5>
-  <h6><%= @group.description %></h6>
+  <div class="row">
+    <div class="col l6">
+      <h5>Group info:</h5>
+      <div class="col l6">
+      <h6>Description:</h6>
+      <p><%= @group.description %></p>
+      </div>
+      <div class="col l6">
+      <h6>Members:</h6>
+      <ul>
+      <% @group.users.each do |user| %>
+        <li><%= user.username %></li>
+      <% end %>
+      </ul>
+      </div>
+    </div>
+    <div class="add-user-to-group col l6">
+      <h5>Add a User to Your Group</h5>
+      <%= form_tag("/user_groups", method: "post") do %>
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+      <%= hidden_field_tag :id, "#{@group.id}" %>
+      <%= submit_tag "Submit", class: "btn blue-grey" %>
+      <% end  %>
+    </div>
+  </div>
   <hr>
   <div class="row">
-    <div class="col l4">
-      <h4>Group Pick:</h4>
-    </div>
-    <div class="col l8 user_dashboard_watchlist">
+    <div class="col l6 user_dashboard_watchlist">
+      <h5 class="center-align">Top Voted Movie:</h5>
       <% if @group.group_watchlists.empty? %>
           <h5>No favorite movie, add one from your watchlist.</h5>
       <% else %>
         <h6 class="center-align"><%= @group.group_watchlists.first.movie.title %></h6>
-        <img src="http://image.tmdb.org/t/p/w300<%= @group.group_watchlists.first.movie.poster_path %>"/>
+        <a href="/movies/<%= @group.group_watchlists.first.movie.id %>"><img src="http://image.tmdb.org/t/p/w300<%= @group.group_watchlists.first.movie.poster_path %>"/></a>
       <% end %>
     </div>
-  </div>
-  <hr>
-  <div class="group-watchlist">
-    <h4><%= @group.name %> Watchlist</h4>
-    <div class="row">
-      <div class="center-align">
-        <% if @group.group_watchlists.empty? %>
-          <h5>Looks like this group has no movies. Why don't you add some?</h5>
-        <% end %>
-      </div>
-      <% @group.group_watchlists.each do |watchlist| %>
-        <div class="col l3 m4 s12 user_dashboard_watchlist">
-          <h6 class="center-align"><%= watchlist.movie.title %></h6>
-          <a href="/movies/<%= watchlist.movie.id %>"><img src="http://image.tmdb.org/t/p/w300<%= watchlist.movie.poster_path %>"/></a>
-          <h6 class="center-align"><%= link_to "Click for more information", movie_path(watchlist.movie.id) %></h6>
-          <div class="col l8 offset-l2">
-          <%= link_to "+", votes_upvote_path(watchlist), method: :post, class: "btn green lighten-3 inline_btn" %>
-          <%= link_to "-", votes_downvote_path(watchlist), method: :post, class: "btn deep-orange lighten-1 inline_btn" %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-  <hr>
-  <div id="user-watchlist">
-    <div class="row">
-      <div class="col l6">
-        <h5>Add From Your Watchlist</h5>
+    <div class="col l6">
+        <h5>Add Movies to Group Vote List:</h5>
+        <p>Select movies and click "Add" to the movies you want the group to vote on</p>
         <%= form_tag(@group_watchlist) do %>
           <ul>
             <%= collection_check_boxes(:group, :movie_ids, @movies, :id, :title) do |b| %>
@@ -53,18 +50,32 @@
               </li>
             <% end %>
           </ul>
-          <%= submit_tag "Add to Group Watchlist", class: "btn blue-grey lighten-1" %>
+          <%= submit_tag "Add Vote List", class: "btn blue-grey lighten-1" %>
         <% end %>
       </div>
-      <div class="add-user-to-group col l6">
-        <h5>Add a User to Your Group</h5>
-        <%= form_tag("/user_groups", method: "post") do %>
-        <%= label_tag :email %>
-        <%= text_field_tag :email %>
-        <%= hidden_field_tag :id, "#{@group.id}" %>
-        <%= submit_tag "Submit", class: "btn blue-grey" %>
-        <% end  %>
+  </div>
+  <hr>
+  <div class="group-watchlist">
+    <h5>Vote For Movies:</h5>
+    <h6>You can vote for each movie one time. Either upvote it or downvote it!</h6>
+    <hr class="small_divider">
+    <div class="row">
+      <div class="center-align">
+        <% if @group.group_watchlists.empty? %>
+          <h5>Looks like this group has no movies to vote for. Why don't you add some?</h5>
+        <% end %>
       </div>
+      <% @group.group_watchlists.each do |watchlist| %>
+        <div class="col l3 m4 s12 user_dashboard_watchlist">
+          <h6 class="center-align"><%= watchlist.movie.title %></h6>
+          <a href="/movies/<%= watchlist.movie.id %>"><img src="http://image.tmdb.org/t/p/w300<%= watchlist.movie.poster_path %>"/></a>
+          <h6 class="center-align"><%= link_to "Click for more information", movie_path(watchlist.movie.id) %></h6>
+          <div class="col l12 offset-l2">
+          <%= link_to "+", votes_upvote_path(watchlist), method: :post, class: "btn green lighten-3 inline_btn" %>
+          <%= link_to "-", votes_downvote_path(watchlist), method: :post, class: "btn deep-orange lighten-1 inline_btn" %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
