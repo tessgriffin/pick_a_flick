@@ -1,6 +1,6 @@
-<div class="container search_field">
+<div class="container search_field input-field">
   <%= form_tag("/search", method: "get", remote: true) do %>
-    <%= label_tag(:search_box, "Search for:") %>
+    <%= label_tag(:search_box, "Search for movie or TV show") %>
     <%= text_field_tag(:search_box) %>
     <%= submit_tag "Search", id: "search_button", class: "btn blue-grey" %>
   <% end %>
