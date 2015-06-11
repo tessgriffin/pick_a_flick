@@ -30,7 +30,7 @@ class VotesController < ApplicationController
       session[:vote] = [] if session[:vote].nil?
       session[:vote] << @vote
       GroupWatchlist.update(watchlist, ranking: new_ranking)
-      flash.now[:success] = "Vote Saved"
+      flash[:success] = "Vote Saved"
       redirect_to group_path(group)
     else
       flash.now[:danger] = @vote.errors.full_messages.join(", ")

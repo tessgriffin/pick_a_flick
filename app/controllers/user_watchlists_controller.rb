@@ -21,6 +21,7 @@ class UserWatchlistsController < ApplicationController
 
   def destroy
     UserWatchlist.destroy(params[:id].to_i)
+    flash[:danger] = "Flick Removed From Watchlist"
     redirect_to user_watchlists_path
   end
 
