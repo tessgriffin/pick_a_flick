@@ -1,6 +1,0 @@
-<% @user_groups.each do |user_group| %>
-<h2><%= user_group.group.name %> </h2>
-  <%= button_to "Accept Invitaion", update_user_group_path(user_group, active: true), method: :put %>
-  <%= button_to "Decline Invitaion", user_group_path(user_group), method: :delete %>
-<h4><%= user_group.group.description %></h4>
-<% end %>

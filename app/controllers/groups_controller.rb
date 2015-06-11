@@ -19,8 +19,10 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find_by(id: params[:id])
-    @movies = current_user.movies
+    @group = Group.find_by!(id: params[:id])
+    cache action: "show", action_suffix: "#{current_user.movies.last}" do
+      @movies = current_user.movies
+    end
     @group_watchlist = GroupWatchlist.new
   end
 

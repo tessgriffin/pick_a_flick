@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   resources :users, except: [:index]
 
-  resources :groups
+  resources :groups, only: [:new, :create, :show]
 
   resources :group_watchlists, only: [:create]
 
-  resources :movies
+  resources :movies, only: [:show]
 
 
   get "auth/:provider/callback", to: "sessions#create"
@@ -27,7 +27,6 @@ Rails.application.routes.draw do
   put "/user_groups/update/:id", to: "user_groups#update", as: :update_user_group
   delete "/user_groups/delete/:id", to: "user_groups#destroy", as: :user_group
 
-  get "/user_groups/pending_invitations/:id", to: "user_groups#pending", as: :pending_invitations
 
   post "/votes/upvote/:id", to: "votes#upvote", as: :votes_upvote
   post "/votes/downvote/:id", to: "votes#downvote", as: :votes_downvote
