@@ -70,6 +70,7 @@
           <h6 class="center-align"><%= watchlist.movie.title %></h6>
           <a href="/movies/<%= watchlist.movie.id %>"><img src="http://image.tmdb.org/t/p/w300<%= watchlist.movie.poster_path %>"/></a>
           <h6 class="center-align"><%= link_to "Click for more information", movie_path(watchlist.movie.id) %></h6>
+            <%= link_to "remove", group_watchlist_path(watchlist), method: :delete, class: "btn deep-orange lighten-2" %><br>
           <div class="col l12 offset-l2">
           <%= link_to "+", votes_upvote_path(watchlist), method: :post, class: "btn green lighten-3 inline_btn" %>
           <%= link_to "-", votes_downvote_path(watchlist), method: :post, class: "btn deep-orange lighten-1 inline_btn" %>

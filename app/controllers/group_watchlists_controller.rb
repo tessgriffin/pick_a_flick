@@ -9,4 +9,10 @@ class GroupWatchlistsController < ApplicationController
     redirect_to request.referrer
   end
 
+  def destroy
+    GroupWatchlist.destroy(params[:id].to_i)
+    flash[:danger] = "Flick Removed From Watchlist"
+    redirect_to request.referrer
+  end
+
 end

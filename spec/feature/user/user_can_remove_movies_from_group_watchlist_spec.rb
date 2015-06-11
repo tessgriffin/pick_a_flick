@@ -26,49 +26,19 @@ feature "user group movies" do
   let(:group_watchlist_movie) { GroupWatchlist.create(group_id: group.id,
                                                  movie_id: movie.id)
                                                  }
-  it "user can upvote" do
-
+  it "user remove flick" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit group_path(group.id)
 
-    page.check('group[movie_ids][]')
-    click_button "Add Vote List"
-
-    click_link "+"
-
-    expect(page).to have_content("Vote Saved")
-
-  end
-
-  it "user cant upvote same movie twice" do
-
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
-    visit group_path(group.id)
+    expect(page).to have_content(movie.title)
 
     page.check('group[movie_ids][]')
     click_button "Add Vote List"
 
-    click_link "+"
-    click_link "+"
+    click_link "remove"
 
-    expect(page).to have_content("Already Voted on this Flick")
-
-  end
-
-  it "user can downvote" do
-
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
-    visit group_path(group.id)
-
-    page.check('group[movie_ids][]')
-    click_button "Add Vote List"
-
-    click_link "-"
-
-    expect(page).to have_content("Vote Saved")
+    expect(page).to have_content("Flick Removed From Watchlist")
 
   end
 end
