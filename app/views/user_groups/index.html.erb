@@ -1,37 +1,39 @@
 <div class="container">
   <div class="row">
-    <div class="col l6">
+    <div class="col l3">
       <h4><%= link_to "@#{current_user.username}'s", "https://www.twitter.com/#{current_user.username}" %> Groups</h4>
     </div>
-    <div class="col l3 offset-l3 button-top">
+    <div class="col l3 offset-l6 button-top">
       <%= link_to "Create New Group", new_group_path, class: "btn blue-grey"%>
     </div>
   </div>
   <div class="row">
     <% @active.each do |user_group| %>
       <div class="col l3 m4 s12 user_dashboard_watchlist">
-      <h5><%= user_group.group.name %></h5>
+      <h5 class="flow-text user-group-title"><%= user_group.group.name %></h5>
       <% if user_group.group.description.empty? %>
-        <p><em>no description given</em></p>
+        <p class="user-group-description"><em>no description given</em></p>
       <% else %>
-        <p><%= user_group.group.description %></p>
+        <p class="user-group-description"><%= user_group.group.description %></p>
       <% end %>
-      <ul>
+    <div class="row">
+      <ul class="user-group-buttons">
         <li><%= link_to "Visit Group", group_path(user_group.group), class: "btn blue-grey" %></li>
         <li><%= button_to "Leave Group", user_group_path(user_group), method: :delete, class: "btn red" %></li>
       </ul>
       </div>
+    </div>
     <% end %>
   </div>
   <hr>
-  <h5>Pending Invites</h5>
+  <h4>Pending Invites</h4>
   <% if @pending.empty? %>
-    <h6>No pending invites</h6>
+    <h5>No pending invites</h5>
   <% end %>
   <% @pending.each do |user_group| %>
     <div class="row">
       <div class="col s6">
-        <h6><%= user_group.group.name %></h6>
+        <h5><%= user_group.group.name %></h5>
       </div>
       <div class="col s3 invitations">
         <%= button_to "Accept Invite", update_user_group_path(user_group, active: true), method: :put, class: "btn green" %>
