@@ -20,11 +20,12 @@ feature "user watchlist" do
 
 
       expect(user_watchlist_movie.watched?).to be false
+
       expect(page).to have_content(movie.title)
 
       click_link "remove"
 
-      expect(page).not_to have_content(movie.title)
+      expect(page).to have_content("Flick Removed From Watchlist")
 
     end
   end

@@ -24,10 +24,6 @@ class UserGroupsController < ApplicationController
     end
   end
 
-  def pending
-    @user_groups = current_user.user_groups.inactive
-  end
-
   def update
     user_group = UserGroup.find_by(id: params[:id])
     user_group.update(active: params[:active])

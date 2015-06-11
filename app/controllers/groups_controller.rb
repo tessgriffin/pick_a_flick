@@ -19,7 +19,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find_by(id: params[:id])
+    @group = Group.find_by!(id: params[:id])
     @movies = current_user.movies
     @group_watchlist = GroupWatchlist.new
   end
