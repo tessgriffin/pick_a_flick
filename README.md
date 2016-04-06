@@ -10,6 +10,6 @@ Primarily a Ruby on Rails 4.2 application with AJAX requests on the front end to
 
 ## Production Link
 
-Pick-a-Flick.herokuapp.com
+[Pick A Flick](https://pick-a-flick.herokuapp.com)
 
 Contributors: Tess Griffin, Kyle Henson, Andrew Carmer
